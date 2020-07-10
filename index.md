@@ -1,4 +1,4 @@
-## Data science portfolio by Pablo A. Spring
+## Data Science Portfolio by Pablo A. Spring
 ---
 [Title with Link](http://example.com/)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
