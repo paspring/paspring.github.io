@@ -12,7 +12,7 @@
 
 ### Clustering with KMeans.
 
-<b>Project I: Finding Similar Neighborhoods in a City</b>
+#### <b>Project I: Finding Similar Neighborhoods in a City</b>
 
 <b>Key Words:</b> K-Means, Folium, Foursquare API, Geodata.<br>
 [IBM Watson Jupyter Notebook](https://dataplatform.cloud.ibm.com/analytics/notebooks/v2/77391d6f-6cc8-442c-9815-7d5d8f5f35ce/view?access_token=a3cc2e54b0cfe2d42d2103ec250ff2c181e173f3eeaea16e28acb98ec5891d6f)
