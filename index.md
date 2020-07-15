@@ -3,6 +3,7 @@
 ## Stand-alone projects.
 Project: Capstone: Predicting Ranking and Price of Restaurants in NYC.<br>
 <b>Key Words:</b> Machine Learning, Clustering, Regression, Folium, Foursquare API, Geodata, PCA, Certification.<br>
+
 <img src="images/poster.png?raw=true"/>
 
 <p>The goal of this work was to develop a machine learning model with the objective of predict and describe how the right location influence the
