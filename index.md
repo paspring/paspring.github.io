@@ -19,7 +19,7 @@
 
 <b>Key Words:</b> K-Means, Folium, Foursquare API, Geodata.
 
-<img src="images/Screenshot (6).png?raw=true"/>
+<img src="images/Screenshot (6).png?raw=true", width=500/>
 
 <p>In this work, we will explore, segment, and cluster the neighborhoods of the city of Toronto. With the objective of find similarities respect to the venues in every neighborhood, for this we will use K-mean clustering and visualization with folium.
 
