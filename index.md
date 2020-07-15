@@ -7,9 +7,7 @@ Project: Capstone: Predicting Ranking and Price of Restaurants in NYC.<br>
 <img src="images/poster.png?raw=true"/>
 
 
-<p>The goal of this work was to develop a machine learning model with the objective of predict and describe how the right location influence the
-success or failure of a restaurant. Specifically, we are going to analyze the restaurants distribution around the neighborhoods of New York City
-using foursquare, google and opencity data. The target audience for this study will be restaurants owners, entrepreneurs and researchers.</p>
+<p>This work was developed  as a final project for the Data Science Professional Certificate by IBM, it was completed in the last two weeks of work. The goal of the project was to develop and train a machine learning model with the objective of predict and describe how the  location influence the success or failure of a restaurant. Here, it was  analyzed restaurants distribution around the neighborhoods of New York City using foursquare, google and opencity data. Where the target audience for the study is restaurants owners, entrepreneurs and researchers.</p>
 
 ---
 ## Classification problems.
@@ -29,7 +27,7 @@ using foursquare, google and opencity data. The target audience for this study w
 
 <img src="images/Clustering_Toronto.png?raw=true"/>
 
-<p>In this work, it was explored, segmented, and clustered the neighborhoods of the city of Toronto, this with the objective of find similarities respect to business searched with the foursquare API. For this project it was used K-mean clustering and visualization with folium.
+<p>In this work, it was explored, segmented, and clustered the neighborhoods of the city of Toronto, this with the objective of find similarities in the venues around different areas , using as a searcher the foursquare API. 
 </p>
 
 ---
