@@ -1,7 +1,7 @@
 ## Data Science Portfolio by Pablo A. Spring
 ---
 ## Stand-alone projects.
-Project: Capstone: Predicting Ranking and Price of Restaurants in NYC.
+Project: Capstone: Predicting Ranking and Price of Restaurants in NYC.<br>
 <b>Key Words:</b> Machine Learning, Clustering, Regression, Folium, Foursquare API, Geodata, PCA, Certification.<br>
 <img src="images/poster.png?raw=true"/>
 
