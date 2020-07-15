@@ -35,7 +35,6 @@
 ### Google Maps API
 <b>Key Words:</b> gmaps, Folium, Geodata, Pandas, Shapely, Geopandas<br>
 <img src="images/nyc-restaurants.png?raw=true"/>
-<p>The google maps API was used to charactarize the NYC restaurants. The choropleth image shows around 15000 restaurants distributed around the city.</p>
+<p>The google maps API was used to characterize the NYC restaurants. The choropleth image shows around 15000 restaurants distributed around the city.</p>
 ---
-<p style="font-size:11px">Page template forked from <a href="https://github.com/evanca/quick-portfolio">evanca</a></p>
-<!-- Remove above link if you don't want to attibute -->
+
