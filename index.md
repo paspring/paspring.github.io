@@ -15,18 +15,14 @@
 
 ### Clustering with KMeans.
 
-<b>Finding Similar Neighborhoods in a City</b>
+<b>Title: Finding Similar Neighborhoods in a City</b>
 
 <b>Key Words:</b> K-Means, Folium, Foursquare API, Geodata.
 
-<img src="images/Screenshot (6).png" width=500 alt="centered image"/>
+<img src="images/Screenshot (6).png" width=500/>
 
-
-<p>In this work, we will explore, segment, and cluster the neighborhoods of the city of Toronto. With the objective of find similarities respect to the venues in every neighborhood, for this we will use K-mean clustering and visualization with folium.
-
-For the Toronto neighborhood data, a Wikipedia page exists that has all the information we need to explore and cluster the neighborhoods in Toronto. We will be required to scrape the Wikipedia page and wrangle the data, clean it, and then read it into a pandas dataframe so that it is in a structured format.
-
-Once the data is in a structured format, we will explore and cluster the neighborhoods in the city of Toronto, using information of the venues available in the Foursquare API.</p>
+<p>In this work, it was explored, segmented, and clustered the neighborhoods of the city of Toronto, this with the objective of find similarities respect to business searched with the foursquare API. For this project it was used K-mean clustering and visualization with folium.
+</p>
 
 ---
 ## Recommendation systems.
