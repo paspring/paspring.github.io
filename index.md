@@ -11,7 +11,7 @@
 ## Clustering.
 
 ### Clustering with KMeans.
----
+
 <b>Title: Finding Similar Neighborhoods in a City</b>
 
 <b>Key Words:</b> K-Means, Folium, Foursquare API, Geodata.<br>
@@ -21,7 +21,9 @@
 
 <p>In this work, it was explored, segmented, and clustered the neighborhoods of the city of Toronto, this with the objective of find similarities respect to business searched with the foursquare API. For this project it was used K-mean clustering and visualization with folium.
 </p>
+
 ---
+
 ## Recommendation systems.
 
 ## Data Visualization.
