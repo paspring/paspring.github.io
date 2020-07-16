@@ -43,6 +43,7 @@ Project: Capstone: Predicting Ranking and Price of Restaurants in NYC.<br>
 
 ### Google Maps API
 <b>Key Words:</b> gmaps, Folium, Geodata, Pandas, Shapely, Geopandas<br>
+[nbviewer Google Maps API Jupyter Notebook](https://nbviewer.jupyter.org/github/paspring/New-York-City-Restaurants-Project/blob/master/NYC%20with%20Google%20Maps%202.ipynb)
 <img src="images/nyc-restaurants.png?raw=true"/>
 <p>The google maps API was used to characterize the NYC restaurants. The choropleth image shows around 15000 restaurants distributed around the city.</p>
 ---
