@@ -2,7 +2,7 @@
 ---
 ## Stand-alone projects.
 Project: Capstone: Predicting Ranking and Price of Restaurants in NYC.<br>
-<b>Key Words:</b> Machine Learning, Clustering, Regression, Folium, Foursquare API, Geodata, PCA, Certification.<br>
+<b>Key Words:</b> Machine Learning, Clustering, Regression, Folium, Foursquare API, Geodata, PCA, Certification, PCA, Geopandas, Pandas, Json, Warngling, Cleaning, Data Exploration.<br>
 [nbviewer Jupyter Notebook of the Project](https://nbviewer.jupyter.org/github/paspring/New-York-City-Restaurants-Project/blob/master/Coursera_Capstone_Final_Project.ipynb)
 
 <img src="images/poster.png?raw=true"/>
