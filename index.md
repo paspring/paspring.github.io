@@ -18,7 +18,7 @@
 #### <b>Title: Visualizing relationships from GSS, BRFSS and NSFG </b>
 
 <b>Key Words:</b> Statistical Thinking, Probabilistic Distributions, Pandas, Numpy, Linear Regressionsm Non-Linear Regressions, Matplotlib, Seaborn.<br>
-
+<img src="images/Sample.png?raw=true"/>
 [nbviewer](https://nbviewer.jupyter.org/github/paspring/EDA/blob/master/Portfolio%20-%20Exploratory%20Data%20Analysis.ipynb)
 ## Natural language processing.
 
