@@ -31,9 +31,17 @@
 </p>
 <b>Key Words:</b> K-Means, Folium, Foursquare API, Geodata.<br>
 
-[IBM Watson Jupyter Notebook] (https://dataplatform.cloud.ibm.com/analytics/notebooks/v2/77391d6f-6cc8-442c-9815-7d5d8f5f35ce/view?access_token=a3cc2e54b0cfe2d42d2103ec250ff2c181e173f3eeaea16e28acb98ec5891d6f)
+[IBM Watson Jupyter Notebook](https://dataplatform.cloud.ibm.com/analytics/notebooks/v2/77391d6f-6cc8-442c-9815-7d5d8f5f35ce/view?access_token=a3cc2e54b0cfe2d42d2103ec250ff2c181e173f3eeaea16e28acb98ec5891d6f)
 
 <img src="images/Clustering_Toronto.png?raw=true"/>
+
+### Simple Linear Regression.
+
+#### <b>Project Title: CO2 Emissions Prediction using Car Features Data Set </b>
+
+<p></p>
+<b>Key Words:</b> 
+[NBViewer Jupyter Notebook](https://nbviewer.jupyter.org/github/paspring/Machine-Learning/blob/master/Portfolio%20-%20Simple%20Linear%20Regression.ipynb)
 
 ---
 
