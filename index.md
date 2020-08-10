@@ -26,7 +26,7 @@
 
 ### Clustering with KMeans.
 
-#### <b>Project Title: Finding Similar Neighborhoods in a City</b>
+#### <b>Project Title: Finding Similar Neighborhoods in a City.</b>
 <p>In this work, it was explored, segmented, and clustered the neighborhoods of the city of Toronto, this with the objective of find similarities in the venues around different areas , using as a searcher the foursquare API. 
 </p>
 <b>Key Words:</b> K-Means, Folium, Foursquare API, Geodata.<br>
@@ -37,12 +37,15 @@
 
 ### Simple Linear Regression.
 
-#### <b>Project Title: CO2 Emissions Prediction using Car Features Data Set </b>
+#### <b>Project Title: CO2 Emission Prediction using Car Features.</b>
 
 <p></p>
-<b>Key Words:</b> 
+
+<b>Key Words: sklearn, matplotlib, seaborn, statsmodels, pandas, numpy </b> 
+
 [NBViewer Jupyter Notebook](https://nbviewer.jupyter.org/github/paspring/Machine-Learning/blob/master/Portfolio%20-%20Simple%20Linear%20Regression.ipynb)
 
+<img src="images/slr_sample.png?raw=true"/>
 ---
 
 ## APIs Usage.
