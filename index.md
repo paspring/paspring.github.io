@@ -21,6 +21,7 @@
 [NBViewer Jupyter Notebook](https://nbviewer.jupyter.org/github/paspring/EDA/blob/master/Portfolio%20-%20Exploratory%20Data%20Analysis.ipynb)
 
 ---
+---
 
 ## Machine Learning.
 
@@ -35,6 +36,8 @@
 
 <img src="images/Clustering_Toronto.png?raw=true"/>
 
+---
+
 #### <b>Project Title: Customer Classification Using K-Nearest Neighborhood</b>
 
 <p>A telecommunications provider has segmented its customer base by service usage patterns, categorizing the customers into four groups. The company wants to customize offers for individual prospective customers using demographic data which can be used to predict group membership. 
@@ -46,7 +49,9 @@ The objective of this work is to train a classification model, given the dataset
 
 <img src="images/knn_sample1.png?raw=true"/>
 
-### Simple Linear Regression.
+---
+---
+### Linear Regression.
 
 #### <b>Project Title: CO2 Emission Prediction using Car Features.</b>
 
@@ -57,11 +62,16 @@ The objective of this work is to train a classification model, given the dataset
 [NBViewer Jupyter Notebook](https://nbviewer.jupyter.org/github/paspring/Machine-Learning/blob/master/Portfolio%20-%20Simple%20Linear%20Regression.ipynb)
 
 <img src="images/slr_sample.png?raw=true"/>
+
+---
 ---
 
 ## APIs Usage.
 
-### Google Maps API
+### Google Maps API: <b>Project Title: NYC Restaurants Data Collection with GMAPS</b>
+
+<p>In this work we use gmaps API with python to get information about restaurants in NYC, this to make classification respect neighborhoods, price level and popularity. In total we were able to obtain 15000 different restaurants with their respective data.</p>
+
 <b>Key Words:</b> gmaps, Folium, Geodata, Pandas, Shapely, Geopandas<br>
 
 <p>The google maps API was used to characterize the NYC restaurants. The choropleth image shows around 15000 restaurants distributed around the city.</p>
