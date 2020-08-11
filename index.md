@@ -20,8 +20,7 @@
 
 [NBViewer Jupyter Notebook](https://nbviewer.jupyter.org/github/paspring/EDA/blob/master/Portfolio%20-%20Exploratory%20Data%20Analysis.ipynb)
 
----
----
+<hr style="width:50%;text-align:;margin-left:0;height:1px">
 
 ## Machine Learning.
 
@@ -36,7 +35,7 @@
 
 <img src="images/Clustering_Toronto.png?raw=true"/>
 
----
+<hr>
 
 #### <b>Project Title: Customer Classification Using K-Nearest Neighborhood</b>
 
@@ -49,8 +48,9 @@ The objective of this work is to train a classification model, given the dataset
 
 <img src="images/knn_sample1.png?raw=true"/>
 
----
----
+
+<hr>
+
 ### Linear Regression.
 
 #### <b>Project Title: CO2 Emission Prediction using Car Features.</b>
@@ -63,8 +63,7 @@ The objective of this work is to train a classification model, given the dataset
 
 <img src="images/slr_sample.png?raw=true"/>
 
----
----
+<hr>
 
 ## APIs Usage.
 
@@ -79,5 +78,6 @@ The objective of this work is to train a classification model, given the dataset
 [NBViewer Jupyter Notebook](https://nbviewer.jupyter.org/github/paspring/New-York-City-Restaurants-Project/blob/master/NYC%20with%20Google%20Maps%202.ipynb)
 
 <img src="images/nyc-restaurants.png?raw=true"/>
----
+
+<hr>
 
