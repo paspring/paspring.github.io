@@ -67,7 +67,7 @@ The objective of this work is to train a classification model, given the dataset
 
 ## APIs Usage.
 
-### Google Maps API: <b>Project Title: NYC Restaurants Data Collection with GMAPS</b>
+#### Google Maps API: <b>Project Title: NYC Restaurants Data Collection with GMAPS</b>
 
 <p>In this work we use gmaps API with python to get information about restaurants in NYC, this to make classification respect neighborhoods, price level and popularity. In total we were able to obtain 15000 different restaurants with their respective data.</p>
 
