@@ -65,6 +65,18 @@ The objective of this work is to train a classification model, given the dataset
 
 <hr>
 
+### Non-Linear Regression.
+
+#### <b>Project Title: China GPD Model using Scipy and Statsmodels.</b>
+
+<p>In This project we create a non linear regression with the objective of create a ML model to get insights about the Chinese GPD. With this objective we use scipy ans statmodels libraries.</p>
+
+[NBViewer Jupyter Notebook]()
+
+<img src="images/nlr_sample.png?raw=true"/>
+
+<hr>
+
 ## APIs Usage.
 
 #### Google Maps API: <b>Project Title: NYC Restaurants Data Collection with GMAPS</b>
