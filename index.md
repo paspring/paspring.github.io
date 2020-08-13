@@ -69,9 +69,9 @@ The objective of this work is to train a classification model, given the dataset
 
 #### <b>Project Title: China GPD Model using Scipy and Statsmodels.</b>
 
-<p>In This project we create a non linear regression with the objective of create a ML model to get insights about the Chinese GPD. With this objective we use scipy ans statmodels libraries.</p>
+<p>In This project we created a non linear regression with the objective of train a ML model to get insights about the Chinese GPD, for this  we used scipy to fit a model.</p>
 
-[NBViewer Jupyter Notebook]()
+[NBViewer Jupyter Notebook](https://nbviewer.jupyter.org/github/paspring/Machine-Learning/blob/master/Portfolio%20-%20NoneLinear%20Regression.ipynb)
 
 <img src="images/nlr_sample.png?raw=true"/>
 
