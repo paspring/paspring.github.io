@@ -71,7 +71,7 @@ The objective of this work is to train a classification model, given the dataset
 
 <p>In This project we created a non linear regression with the objective of train a ML model to get insights about the Chinese GPD, for this  we used scipy to fit a model.</p>
 
-<center>[NBViewer Jupyter Notebook](https://nbviewer.jupyter.org/github/paspring/Machine-Learning/blob/master/Portfolio%20-%20NoneLinear%20Regression.ipynb)</center>
+[NBViewer Jupyter Notebook](https://nbviewer.jupyter.org/github/paspring/Machine-Learning/blob/master/Portfolio%20-%20NoneLinear%20Regression.ipynb)
 
 <img src="images/nlr_sample.png?raw=true"/>
 
@@ -83,7 +83,7 @@ The objective of this work is to train a classification model, given the dataset
 
 <p>In this project we used a classification algorithm to build a model from historical data of patients, and their response to different medications. For this we worked training a decision tree model to predict the class of a unknown patient, or to find a proper drug for a new patient.</p>
 
-<center>[NBViewer Jupyter Notebook]()</center>
+[NBViewer Jupyter Notebook]()
 
 <img src="images/dt_sample.png?raw=true"/>
 
