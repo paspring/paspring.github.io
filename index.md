@@ -83,21 +83,21 @@ The objective of this work is to train a classification model, given the dataset
 
 <p>In this project we used a classification algorithm to predict the response of a group of patients to different medications using historical data. For this, we worked training a decision tree model to predict the class of a unknown patient, or to find a proper drug for a new one.</p>
 
-[NBViewer Jupyter Notebook]()
+[NBViewer Jupyter Notebook](https://nbviewer.jupyter.org/github/paspring/Machine-Learning/blob/master/Portfolio%20-%20Decision%20Trees%20Drugs%20.ipynb)
 
 <img src="images/dt_sample.png?raw=true"/>
 
 
 <hr>
+
 ## APIs Usage.
 
 #### Google Maps API: <b>Project Title: NYC Restaurants Data Collection with GMAPS</b>
 
 <p>In this work we use gmaps API with python to get information about restaurants in NYC, this to make classification respect neighborhoods, price level and popularity. In total we were able to obtain 15000 different restaurants with their respective data.</p>
+<p>The google maps API was used to characterize the NYC restaurants. The choropleth image shows around 15000 restaurants distributed around the city.</p>
 
 <b>Key Words:</b> gmaps, Folium, Geodata, Pandas, Shapely, Geopandas<br>
-
-<p>The google maps API was used to characterize the NYC restaurants. The choropleth image shows around 15000 restaurants distributed around the city.</p>
 
 [NBViewer Jupyter Notebook](https://nbviewer.jupyter.org/github/paspring/New-York-City-Restaurants-Project/blob/master/NYC%20with%20Google%20Maps%202.ipynb)
 
