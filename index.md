@@ -81,7 +81,7 @@ The objective of this work is to train a classification model, given the dataset
 
 #### <b>Project Title: Drug Prescription using Historical data of Patients</b>
 
-<p>In this project we used a classification algorithm to build a model from historical data of patients, and their response to different medications. For this we worked training a decision tree model to predict the class of a unknown patient, or to find a proper drug for a new patient.</p>
+<p>In this project we used a classification algorithm to predict the response of a group of patients to different medications using historical data. For this, we worked training a decision tree model to predict the class of a unknown patient, or to find a proper drug for a new one.</p>
 
 [NBViewer Jupyter Notebook]()
 
