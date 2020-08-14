@@ -26,7 +26,7 @@
 
 ### Classification using KNN.
 
-#### <b>Project Title: Finding Similar Neighborhoods in a City.</b>
+#### <b>Project Title: Finding Similar Neighborhoods in a City using KNN.</b>
 <p>In this work, it was explored, segmented, and clustered the neighborhoods of the city of Toronto, this with the objective of find similarities in the venues around different areas , using as a searcher the foursquare API. 
 </p>
 <b>Key Words:</b> KNN, Folium, Foursquare API, Geodata.<br>
