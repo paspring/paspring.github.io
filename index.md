@@ -51,6 +51,31 @@ The objective of this work is to train a classification model, given the dataset
 
 <hr>
 
+### Classification with Decision Tree.
+
+#### <b>Project Title: Drug Prescription using Historical data of Patients</b>
+
+<p>In this project we used a classification algorithm to predict the response of a group of patients to different medications using historical data. For this, we worked training a decision tree model to predict the class of a unknown patient, or to find a proper drug for a new one.</p>
+
+[NBViewer Jupyter Notebook](https://nbviewer.jupyter.org/github/paspring/Machine-Learning/blob/master/Portfolio%20-%20Decision%20Trees%20Drugs%20.ipynb)
+
+<img src="images/dt_sample.png?raw=true"/>
+
+
+<hr>
+
+### Clasification with Logistic Regression.
+
+#### <b>Project Title: Customer Churn with Logistic Regression.</b>
+
+<p>In this notebook we created a model for a telecommunication company, to predict when its customers will leave for a competitor, so that they can take some action to retain the customers. Because the nature of this problem we trained a classification model using logistic regression with sklearn, scipy and statsmodels.</p>
+
+[NBViewer Jupyter Notebook]()
+
+<img src="images/logr_sample.png?raw=true"/>
+
+<hr>
+
 ### Linear Regression.
 
 #### <b>Project Title: CO2 Emission Prediction using Car Features.</b>
@@ -77,18 +102,7 @@ The objective of this work is to train a classification model, given the dataset
 
 <hr>
 
-### Decision Tree.
 
-#### <b>Project Title: Drug Prescription using Historical data of Patients</b>
-
-<p>In this project we used a classification algorithm to predict the response of a group of patients to different medications using historical data. For this, we worked training a decision tree model to predict the class of a unknown patient, or to find a proper drug for a new one.</p>
-
-[NBViewer Jupyter Notebook](https://nbviewer.jupyter.org/github/paspring/Machine-Learning/blob/master/Portfolio%20-%20Decision%20Trees%20Drugs%20.ipynb)
-
-<img src="images/dt_sample.png?raw=true"/>
-
-
-<hr>
 
 ## APIs Usage.
 
