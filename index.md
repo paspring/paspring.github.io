@@ -70,7 +70,7 @@ The objective of this work is to train a classification model, given the dataset
 
 <p>In this notebook we created a model for a telecommunication company, to predict when its customers will leave for a competitor, so that they can take some action to retain the customers. Because the nature of this problem we trained a classification model using logistic regression with sklearn, scipy and statsmodels.</p>
 
-[NBViewer Jupyter Notebook]()
+[NBViewer Jupyter Notebook](https://nbviewer.jupyter.org/github/paspring/Machine-Learning/blob/master/Portfolio%20-%20Clas%20Logistic%20Reegression.ipynb)
 
 <img src="images/logr_sample.png?raw=true"/>
 
