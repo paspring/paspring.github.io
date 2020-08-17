@@ -44,7 +44,7 @@ The objective of this work is to train a classification model, given the dataset
 
 <b>Key Words:KNN, sklearn, pandas, matplotlib, seaborn</b>
 
-[NBViewer](https://nbviewer.jupyter.org/github/paspring/Machine-Learning/blob/master/Portfolio%20-%20KNearest%20neighbors.ipynb)
+[NBViewer Jupyter Notebook](https://nbviewer.jupyter.org/github/paspring/Machine-Learning/blob/master/Portfolio%20-%20KNearest%20neighbors.ipynb)
 
 <img src="images/knn_sample1.png?raw=true"/>
 
@@ -56,6 +56,9 @@ The objective of this work is to train a classification model, given the dataset
 #### <b>Project Title: Drug Prescription using Historical data of Patients</b>
 
 <p>In this project we used a classification algorithm to predict the response of a group of patients to different medications using historical data. For this, we worked training a decision tree model to predict the class of a unknown patient, or to find a proper drug for a new one.</p>
+
+<b>Key Words:</b> Decision Tree, Pandas, Matplotlib, Seaborn, Evaluation Scores, sklearn <br>
+
 
 [NBViewer Jupyter Notebook](https://nbviewer.jupyter.org/github/paspring/Machine-Learning/blob/master/Portfolio%20-%20Decision%20Trees%20Drugs%20.ipynb)
 
@@ -70,9 +73,25 @@ The objective of this work is to train a classification model, given the dataset
 
 <p>In this notebook we created a model for a telecommunication company, to predict when its customers will leave for a competitor, so that they can take some action to retain the customers. Because the nature of this problem we trained a classification model using logistic regression with sklearn, scipy and statsmodels.</p>
 
+<b>Key Words:</b> Logistic regression, sklearn, Pandas, Matplotlib, Seaborn, Evaluation Scores <br>
+
 [NBViewer Jupyter Notebook](https://nbviewer.jupyter.org/github/paspring/Machine-Learning/blob/master/Portfolio%20-%20Clas%20Logistic%20Reegression.ipynb)
 
 <img src="images/logr_sample.png?raw=true"/>
+
+<hr>
+
+### Clasification with Support Vector Machine.
+
+#### <b>Project Title: Types of Cancer Classification using SVM.</b>
+
+<p>In this notebook, We used SVM (Support Vector Machines) to build and train a model using human cell records, and classify cells to whether the samples are benign or malignant.</p>
+
+<b>Key Words:</b> Support Vector Machine, Pandas, Matplotlib, Seaborn, Evaluation Scores, Correlation Matrix, Confusion Matrix <br>
+
+[NBViewer Jupyter Notebook](https://nbviewer.jupyter.org/github/paspring/Machine-Learning/blob/master/Portfolio%20-%20%20Clas%20SVM%20Cancer.ipynb)
+
+<img src="images/svm_sample.png?raw=true"/>
 
 <hr>
 
@@ -80,7 +99,7 @@ The objective of this work is to train a classification model, given the dataset
 
 #### <b>Project Title: CO2 Emission Prediction using Car Features.</b>
 
-<p></p>
+<p>Here is an application of simple linear regression (SLR) for a dataset of fuel consumption from cars with different motor characteristics.</p>
 
 <b>Key Words: sklearn, matplotlib, seaborn, statsmodels, pandas, numpy </b> 
 
