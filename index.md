@@ -15,6 +15,10 @@
 
 #### <b>Project Title: Visualizing relationships from GSS, BRFSS and NSFG </b>
 
+<p>
+In this notebook we explore data related to demographics and health, including the National Survey of Family Growth and the General Social Survey.
+</p>
+
 <b>Key Words:</b> Statistical Thinking, Probabilistic Distributions, Pandas, Numpy, Linear Regressionsm Non-Linear Regressions, Matplotlib, Seaborn.<br>
 <img src="images/Sample.png?raw=true"/>
 
