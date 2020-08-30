@@ -142,6 +142,23 @@ The objective of this work is to train a classification model, given the dataset
 
 <hr>
 
-|a|b|c|
-|---|---|---|
-|a|b|c|
+
+## Courses in Data Science Specialization.
+
+### IBM Professional Data Science Certification.
+
+[Certificate](https://www.coursera.org/account/accomplishments/specialization/certificate/84DBFFEJXYZQ)
+
+The following courses were taken while completing this certification.
+
+|**Course Name**|**Course Overview**|**Completion Credentials**|
+|:-:|:-:|:-:|
+|**What is Data Science?**|In this course is an overview of what data science is today.|[Credential](https://www.coursera.org/account/accomplishments/certificate/CFWENGY7TQPA)|
+|**Tools for Data Science**|Course about Jupyter Notebooks, RStudio IDE, Apache Zeppelin and IBM Watson Studio.|[Credential](https://www.coursera.org/account/accomplishments/certificate/64TLQ6M9DLP8)|
+|**Data Science Methodology**|This course aboard the major steps involved in practicing data science, from forming a concrete business or research problem, to collecting and analyzing data, to building a model, and understanding the feedback after model deployment.|[Credential](https://www.coursera.org/account/accomplishments/certificate/TK2VE7NG9YAE)|
+|**Python for Data Science and AI**|Course on Python fundamentals, including data structures and data analysis, programing skills, data manipulation, and solving real-world problems.|[Credential](https://www.coursera.org/account/accomplishments/certificate/RE593M22QEZM)|
+|**Databases and SQL for Data Science**|introduction to relational database and foundational knowledge of the SQL language.|[Credential](https://www.coursera.org/account/accomplishments/certificate/JV2EGF875E3Z)|
+|**Data Analysis with Python**|This course introduce data analysis libraries such a Pandas, Numpy ,Scipy and scikit-learn, all these focused in the use of some machine learning algorithms to build smart models and make predictive analysis. |[Credential](https://www.coursera.org/account/accomplishments/certificate/7Z4GF66646WT)|
+|**Data Visualization with Python**| The main goal of this course is to take data and present it in a form that makes sense to people, all this using several data visualization libraries in Python, namely Matplotlib, Seaborn, and Folium|[Credential](https://www.coursera.org/account/accomplishments/certificate/FZQR2AN52YWW)|
+|**Machine Learning with Python**|This course dives into the basics of machine learning using Python, using algorithms such as regression, classification, clustering, sci-kit learn and SciPy. |[Credential](https://www.coursera.org/account/accomplishments/certificate/EGD6268LW6K3)|
+|**Applied Data Science Capstone**|Final certificate project . |[Credential](https://www.coursera.org/account/accomplishments/certificate/YWQCBYWDBME4)|
