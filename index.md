@@ -145,9 +145,7 @@ The objective of this work is to train a classification model, given the dataset
 
 ## Courses in Data Science Specialization.
 
-### IBM Professional Data Science Certification.
-
-[Certificate](https://www.coursera.org/account/accomplishments/specialization/certificate/84DBFFEJXYZQ)
+### IBM Professional Data Science Certification. [Certificate](https://www.coursera.org/account/accomplishments/specialization/certificate/84DBFFEJXYZQ)
 
 The following courses were taken while completing this certification.
 
