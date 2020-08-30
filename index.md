@@ -142,3 +142,6 @@ The objective of this work is to train a classification model, given the dataset
 
 <hr>
 
+|a|b|c|
+|---|---|---|
+|a|b|c|
