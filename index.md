@@ -160,3 +160,29 @@ The following courses were taken while completing this certification.
 |**Data Visualization with Python**| The main goal of this course is to take data and present it in a form that makes sense to people, all this using several data visualization libraries in Python, namely Matplotlib, Seaborn, and Folium|[Credential](https://www.coursera.org/account/accomplishments/certificate/FZQR2AN52YWW)|
 |**Machine Learning with Python**|This course dives into the basics of machine learning using Python, using algorithms such as regression, classification, clustering, sci-kit learn and SciPy. |[Credential](https://www.coursera.org/account/accomplishments/certificate/EGD6268LW6K3)|
 |**Applied Data Science Capstone**|Final certificate project . |[Credential](https://www.coursera.org/account/accomplishments/certificate/YWQCBYWDBME4)|
+
+
+### Advanced Data Science with IBM Specialization. [Certificate]()
+
+The following courses were taken while completing this certification.
+
+|**Course Name**|**Course Overview**|**Completion Credentials**|
+|:-:|:-:|:-:|
+|**Fundamentals of Scalable Data Science**|This is about the fundamentals of Apache Spark using python and pyspark.|[Credential](https://www.coursera.org/account/accomplishments/records/U74SC2ME57RQ)|
+
+### Data Scientist with Python by DataCamp
+
+The following courses were taken while completing this certification. [Statement of accomplishment]()
+
+|**Course Name**|**Course Overview**|**Completion Credentials**|
+|:-:|:-:|:-:|
+|**Introduction to Python**|This course focuses on Python specifically for data science|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/0c0000b87c913e464d1b6c054a189b82c5bcc953)|
+|**Intermediate Python**|This course thaught about visualization with Matplotlib's functions and gettting acquainted with data structures such as the dictionary and the pandas DataFrame|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/09ceecfe7753787a4dc090f24076f3cb3b848691)|
+|**Data Manipulation with pandas**|This course is a training about how to manipulate, extract, filter, and transform real-world datasets for analysis using DataFrames. |[Credential](https://www.datacamp.com/statement-of-accomplishment/course/08bc7c823ed86e72d3c7f81db0535ad102c9d332)|
+|**Joining Data with pandas**|Combining data from multiple tables by joining data together using pandas.|...|
+|**Introduction to Data Visualization with Matplotlib**|Creating, customizing and shering data visualizations using Matplotlib.|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/5c59ba75ac3c2b6613bd8325a5cb78b4fe6fd997)|
+|**Introduction to Data Visualization with Seaborn**|Learning how to create informative and attractive visualizations in Python using the Seaborn library.|...|
+|**Python Data Science Toolbox(Part 1)**|Writing functions in Python, as well as key concepts like scoping and error handling.|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/081ecd2ff5dc43304d6fa9bba68ae3c14a915ce7)|
+|**Python Data Science Toolbox (Part 2)**| Course about iterators and list comprehensions.|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/e2f6f5926c9852083c4767a61ebbd205062bbe1e)|
+|****||[Credential]()|
+|****||[Credential]()|
