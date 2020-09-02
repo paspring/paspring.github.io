@@ -1,9 +1,5 @@
 ### IBM Professional Data Science Certification. [Certificate](https://www.coursera.org/account/accomplishments/specialization/certificate/84DBFFEJXYZQ)
 
-
-<details>
-  <summary>Click to course details</summary>
-
 |**Course Name**|**Course Overview**|**Completion Credentials**|
 |:-:|:-:|:-:|
 |**What is Data Science?**|In this course is an overview of what data science is today.|[Credential](https://www.coursera.org/account/accomplishments/certificate/CFWENGY7TQPA)|
@@ -16,24 +12,15 @@
 |**Machine Learning with Python**|This course dives into the basics of machine learning using Python, using algorithms such as regression, classification, clustering, sci-kit learn and SciPy. |[Credential](https://www.coursera.org/account/accomplishments/certificate/EGD6268LW6K3)|
 |**Applied Data Science Capstone**|Final certificate project . |[Credential](https://www.coursera.org/account/accomplishments/certificate/YWQCBYWDBME4)|
 
-</details>
 
 ### Advanced Data Science with IBM Specialization. 
-
-<details>
-  <summary>Click to course details</summary>
-  
+ 
 |**Course Name**|**Course Overview**|**Completion Credentials**|
 |:-:|:-:|:-:|
 |**Fundamentals of Scalable Data Science**|This is about the fundamentals of Apache Spark using python and pyspark.|[Credential](https://www.coursera.org/account/accomplishments/records/U74SC2ME57RQ)|
 
-</details>
-
 ### Data Scientist with Python by DataCamp. 
 
-<details>
-  <summary>Click to course details</summary>
-  
 |**Course Name**|**Course Overview**|**Completion Credentials**|
 |:-:|:-:|:-:|
 |**Introduction to Python**|This course focuses on Python specifically for data science|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/0c0000b87c913e464d1b6c054a189b82c5bcc953)|
@@ -46,4 +33,3 @@
 |**Exploratory Data Analysis in Python**|This course presents the tools to clean and validate data, to visualize distributions and relationships between variables, and to use regression models to predict and explain|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/6fbd6a85152c834ac02fd1e58b6d4c4eb1927f09)|
 |**Statistical Thinking in Python (Part 1)**|This course boarde the foundation to statistical thinking, to speak the language of our data, and understand what your the data is telling|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/99db5bceddc1b5cbecfeea8370539a5b7d2182e6)|
 
-</details>
