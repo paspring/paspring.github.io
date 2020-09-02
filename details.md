@@ -12,13 +12,14 @@
 |**Machine Learning with Python**|This course dives into the basics of machine learning using Python, using algorithms such as regression, classification, clustering, sci-kit learn and SciPy. |[Credential](https://www.coursera.org/account/accomplishments/certificate/EGD6268LW6K3)|
 |**Applied Data Science Capstone**|Final certificate project . |[Credential](https://www.coursera.org/account/accomplishments/certificate/YWQCBYWDBME4)|
 
-
+<hr>
 ### Advanced Data Science with IBM Specialization. 
  
 |**Course Name**|**Course Overview**|**Completion Credentials**|
 |:-:|:-:|:-:|
 |**Fundamentals of Scalable Data Science**|This is about the fundamentals of Apache Spark using python and pyspark.|[Credential](https://www.coursera.org/account/accomplishments/records/U74SC2ME57RQ)|
 
+<hr>
 ### Data Scientist with Python by DataCamp. 
 
 |**Course Name**|**Course Overview**|**Completion Credentials**|
