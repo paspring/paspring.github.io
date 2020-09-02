@@ -174,8 +174,7 @@ The following courses were taken while completing this certification.
 
 <details>
   <summary>Click to course details</summary>
-  
-	|**Course Name**|**Course Overview**|**Completion Credentials**|
+  |**Course Name**|**Course Overview**|**Completion Credentials**|
 	|:-:|:-:|:-:|
 	|**Introduction to Python**|This course focuses on Python specifically for data science|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/0c0000b87c913e464d1b6c054a189b82c5bcc953)|
 	|**Intermediate Python**|This course thaught about visualization with Matplotlib's functions and gettting acquainted with data structures such as the dictionary and the pandas DataFrame|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/09ceecfe7753787a4dc090f24076f3cb3b848691)|
