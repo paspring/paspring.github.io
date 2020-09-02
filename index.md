@@ -197,4 +197,4 @@ The following courses were taken while completing this certification.
 <!---|**Unsupervised Learning in Python**| Learning how to cluster, transform, visualize, and extract insights from unlabeled datasets using scikit-learn and scipy.|[Credential]()|-->
 <!---|**Machine Learning with Tree-Based Models in Python**| Learning how to use tree-based models and ensembles for regression and classification using scikit-learn|[Credential]()|-->
 <!---|**Cluster Analysis in Python**| Introduction to unsupervised learning through techniques such as hierarchical and k-means clustering|[Credential]()|-->
-<!---|****||[Credential]()|-->
+<!-- |****||[Credential]()| -->
