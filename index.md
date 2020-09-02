@@ -172,17 +172,19 @@ The following courses were taken while completing this certification.
 
 ### Data Scientist with Python by DataCamp. 
 
-The following courses were taken while completing this certification. 
+<details>
+  <summary>Click to course details</summary>
+  
+	|**Course Name**|**Course Overview**|**Completion Credentials**|
+	|:-:|:-:|:-:|
+	|**Introduction to Python**|This course focuses on Python specifically for data science|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/0c0000b87c913e464d1b6c054a189b82c5bcc953)|
+	|**Intermediate Python**|This course thaught about visualization with Matplotlib's functions and gettting acquainted with data structures such as the dictionary and the pandas DataFrame|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/09ceecfe7753787a4dc090f24076f3cb3b848691)|
+	|**Data Manipulation with pandas**|This course is a training about how to manipulate, extract, filter, and transform real-world datasets for analysis using DataFrames. |[Credential](https://www.datacamp.com/statement-of-accomplishment/course/08bc7c823ed86e72d3c7f81db0535ad102c9d332)|
+	|**Joining Data with pandas**|Combining data from multiple tables by joining data together using pandas.|...|
+	|**Introduction to Data Visualization with Matplotlib**|Creating, customizing and shering data visualizations using Matplotlib.|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/5c59ba75ac3c2b6613bd8325a5cb78b4fe6fd997)|
+	|**Python Data Science Toolbox(Part 1)**|Writing functions in Python, as well as key concepts like scoping and error handling.|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/081ecd2ff5dc43304d6fa9bba68ae3c14a915ce7)|
+	|**Python Data Science Toolbox (Part 2)**|Course about iterators and list comprehensions.|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/e2f6f5926c9852083c4767a61ebbd205062bbe1e)|
+	|**Exploratory Data Analysis in Python**|This course presents the tools to clean and validate data, to visualize distributions and relationships between variables, and to use regression models to predict and explain|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/6fbd6a85152c834ac02fd1e58b6d4c4eb1927f09)|
+	|**Statistical Thinking in Python (Part 1)**|This course boarde the foundation to statistical thinking, to speak the language of our data, and understand what your the data is telling|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/99db5bceddc1b5cbecfeea8370539a5b7d2182e6)|
 
-|**Course Name**|**Course Overview**|**Completion Credentials**|
-|:-:|:-:|:-:|
-|**Introduction to Python**|This course focuses on Python specifically for data science|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/0c0000b87c913e464d1b6c054a189b82c5bcc953)|
-|**Intermediate Python**|This course thaught about visualization with Matplotlib's functions and gettting acquainted with data structures such as the dictionary and the pandas DataFrame|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/09ceecfe7753787a4dc090f24076f3cb3b848691)|
-|**Data Manipulation with pandas**|This course is a training about how to manipulate, extract, filter, and transform real-world datasets for analysis using DataFrames. |[Credential](https://www.datacamp.com/statement-of-accomplishment/course/08bc7c823ed86e72d3c7f81db0535ad102c9d332)|
-|**Joining Data with pandas**|Combining data from multiple tables by joining data together using pandas.|...|
-|**Introduction to Data Visualization with Matplotlib**|Creating, customizing and shering data visualizations using Matplotlib.|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/5c59ba75ac3c2b6613bd8325a5cb78b4fe6fd997)|
-|**Python Data Science Toolbox(Part 1)**|Writing functions in Python, as well as key concepts like scoping and error handling.|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/081ecd2ff5dc43304d6fa9bba68ae3c14a915ce7)|
-|**Python Data Science Toolbox (Part 2)**|Course about iterators and list comprehensions.|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/e2f6f5926c9852083c4767a61ebbd205062bbe1e)|
-|**Exploratory Data Analysis in Python**|This course presents the tools to clean and validate data, to visualize distributions and relationships between variables, and to use regression models to predict and explain|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/6fbd6a85152c834ac02fd1e58b6d4c4eb1927f09)|
-|**Statistical Thinking in Python (Part 1)**|This course boarde the foundation to statistical thinking, to speak the language of our data, and understand what your the data is telling|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/99db5bceddc1b5cbecfeea8370539a5b7d2182e6)|
-
+</details>
