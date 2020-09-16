@@ -34,3 +34,8 @@
 |**Exploratory Data Analysis in Python**|This course presents the tools to clean and validate data, to visualize distributions and relationships between variables, and to use regression models to predict and explain|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/6fbd6a85152c834ac02fd1e58b6d4c4eb1927f09)|
 |**Statistical Thinking in Python (Part 1)**|This course boarde the foundation to statistical thinking, to speak the language of our data, and understand what your the data is telling|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/99db5bceddc1b5cbecfeea8370539a5b7d2182e6)|
 
+<hr>
+### Python Programmer by DataCamp. 
+|**Course Name**|**Course Overview**|**Completion Credentials**|
+|:-:|:-:|:-:|
+|**Object-Oriented Programming in Python**| Creation of classes and leverage inheritance and polymorphism to reuse and optimize code.|[Credentials](https://www.datacamp.com/statement-of-accomplishment/course/0c05c4911d8c3014805f816c0ef97bc552177937)|
