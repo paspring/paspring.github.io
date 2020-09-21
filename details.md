@@ -18,7 +18,7 @@
 |**Course Name**|**Course Overview**|**Completion Credentials**|
 |:-:|:-:|:-:|
 |**I - Fundamentals of Scalable Data Science**|This is about the fundamentals of Apache Spark using python and pyspark.|[Credential](https://www.coursera.org/account/accomplishments/records/U74SC2ME57RQ)|
-
+|**II - **||[Credentials]()|
 <hr>
 ### Data Scientist with Python by DataCamp. 
 
@@ -35,7 +35,9 @@
 |**XXI - Statistical Thinking in Python (Part 1)**|This course boarde the foundation to statistical thinking, to speak the language of our data, and understand what your the data is telling|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/99db5bceddc1b5cbecfeea8370539a5b7d2182e6)|
 
 <hr>
+
 ### Python Programmer by DataCamp. 
+
 |**Course Name**|**Course Overview**|**Completion Credentials**|
 |:-:|:-:|:-:|
 |**III - Data Manipulation with pandas**|How to manipulate, extract, filter, and transform real-world datasets for analysis using DataFrames. |[Credential](https://www.datacamp.com/statement-of-accomplishment/course/08bc7c823ed86e72d3c7f81db0535ad102c9d332)|
