@@ -12,15 +12,13 @@
 |**VIII - Machine Learning with Python**|This course dives into the basics of machine learning using Python, using algorithms such as regression, classification, clustering, sci-kit learn and SciPy. |[Credential](https://www.coursera.org/account/accomplishments/certificate/EGD6268LW6K3)|
 |**IX - Applied Data Science Capstone**|Final certificate project . |[Credential](https://www.coursera.org/account/accomplishments/certificate/YWQCBYWDBME4)|
 
-<hr>
 
 ### Advanced Data Science with IBM Specialization. 
  
 |**Course Name**|**Course Overview**|**Completion Credentials**|
 |:-:|:-:|:-:|
-|**I - Fundamentals of Scalable Data Science**|This is about the fundamentals of Apache Spark using python and pyspark.|[Credential](https://www.coursera.org/account/accomplishments/records/U74SC2ME57RQ)|
+|**I - Fundamentals of Scalable Data Science**|Fundamentals of Apache Spark using python and pyspark.|[Credential](https://www.coursera.org/account/accomplishments/records/U74SC2ME57RQ)|
 
-<hr>
 
 ### Data Scientist with Python by DataCamp. 
 
@@ -36,7 +34,6 @@
 |**XIX - Exploratory Data Analysis in Python**|This course presents the tools to clean and validate data, to visualize distributions and relationships between variables, and to use regression models to predict and explain|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/6fbd6a85152c834ac02fd1e58b6d4c4eb1927f09)|
 |**XXI - Statistical Thinking in Python (Part 1)**|This course boarde the foundation to statistical thinking, to speak the language of our data, and understand what your the data is telling|[Credential](https://www.datacamp.com/statement-of-accomplishment/course/99db5bceddc1b5cbecfeea8370539a5b7d2182e6)|
 
-<hr>
 
 ### Python Programmer by DataCamp. 
 
