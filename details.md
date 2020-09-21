@@ -13,13 +13,15 @@
 |**IX - Applied Data Science Capstone**|Final certificate project . |[Credential](https://www.coursera.org/account/accomplishments/certificate/YWQCBYWDBME4)|
 
 <hr>
+
 ### Advanced Data Science with IBM Specialization. 
  
 |**Course Name**|**Course Overview**|**Completion Credentials**|
 |:-:|:-:|:-:|
 |**I - Fundamentals of Scalable Data Science**|This is about the fundamentals of Apache Spark using python and pyspark.|[Credential](https://www.coursera.org/account/accomplishments/records/U74SC2ME57RQ)|
-|**II - **||[Credentials]()|
+
 <hr>
+
 ### Data Scientist with Python by DataCamp. 
 
 |**Course Name**|**Course Overview**|**Completion Credentials**|
