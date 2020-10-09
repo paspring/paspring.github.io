@@ -18,7 +18,7 @@
 |**Course Name**|**Course Overview**|**Completion Credentials**|
 |:-:|:-:|:-:|
 |**I - Fundamentals of Scalable Data Science**|Fundamentals of Apache Spark using python and pyspark.|[Credential](https://www.coursera.org/account/accomplishments/records/U74SC2ME57RQ)|
-
+|**II - Advanced Machine Learning and Signal Processing**|Scalable machine learning using pyspark and systemml, with a final project using signal processing and Urban Noise dataset.|[Credential](https://coursera.org/share/9a125ef880adb3e6348712e55071bad9)|
 
 ### Data Scientist with Python by DataCamp. 
 
