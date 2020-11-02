@@ -1,8 +1,8 @@
 ## Data Science Portfolio by Pablo A. Spring
 ---
 ## Stand-alone projects.
-#### <b>Project Title: Predicting Ranking and Price of Restaurants in NYC.</b><br>
-<p>This work was developed  as a final project for the Data Science Professional Certificate by IBM, it was completed in the last two weeks of work. The goal of the project was to develop and train a machine learning model with the objective of predict and describe how the  location influence the success or failure of a restaurant. Here, it was  analyzed restaurants distribution around the neighborhoods of New York City using foursquare, google and opencity data. Where the target audience for the study is restaurants owners, entrepreneurs and researchers.</p>
+#### <b>Project Title: Mapping NYC Restaurants 2020.</b><br>
+<p>This work was developed  as a final project for the Data Science Professional Certificate by IBM, it was completed in the last two weeks of work. Here it was created a ETL process to map NYC restaurants from Gmaps and Foursquare API. Where the target audience for the study is restaurants owners, entrepreneurs and researchers.</p>
 
 <b>Key Words:</b> Machine Learning, Clustering, Regression, Folium, Foursquare API, Geodata, PCA, Certification, PCA, Geopandas, Pandas, Json, Warngling, Cleaning, Data Exploration.<br>
 
