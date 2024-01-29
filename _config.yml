@@ -42,3 +42,19 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+classes: wide
+layout: splash
+
+author:
+  name: "Pablo Andres Spring Flores"
+  avatar: "/assets/images/profiles.jpeg"
+  bio: "I am an **amazing** person." # Note: Markdown is allowed
+  location: "Jersey City, NJ"
+  links:
+    - label: "Linkedin"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://mademistakes.com"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/paspring"

@@ -2,11 +2,15 @@
 main:
   - title: "Quick-Start Guide"
     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+  - title: "Projects"
+  - title: "Courses and Certifications"
+  - title: "Resources"
   - title: "About"
-    url: /about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+    url: "/about/"
+    submenu:
+      - title: "Professional Resume"
+        url: "/about/professional-resume/"
+      - title: "Education"
+        url: "/about/education/"
+      - title: "Skills"
+        url: "/about/skills/"
