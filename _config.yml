@@ -22,9 +22,9 @@ include:
 title: Advanced Analytics Portfolio
 email: paspring@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+Explore my professional portfolio to discover my work as a Data Scientist. 
+Delve into my career background in the "About" section, check out my projects highlighting my skills and creativity, 
+and read my latest insights in the "Blog" section. This site is a curated collection of my experiences, projects, and thoughts in the realm of data science.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://paspring.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  paspring
