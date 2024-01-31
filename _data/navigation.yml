@@ -1,16 +1,7 @@
 # main links
 main:
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "Projects"
   - title: "Courses and Certifications"
   - title: "Resources"
-  - title: "About"
+  - title: "About Me"
     url: "/about/"
-    submenu:
-      - title: "Professional Resume"
-        url: "/about/professional-resume/"
-      - title: "Education"
-        url: "/about/education/"
-      - title: "Skills"
-        url: "/about/skills/"
