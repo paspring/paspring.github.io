@@ -22,11 +22,9 @@ include:
 title: Advanced Analytics Portfolio
 email: paspring@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-Welcome to my professional portfolio, a dynamic showcase of my journey as a Data Scientist. 
-Here, you'll find a comprehensive overview of my skills, experiences, and personal projects. 
-Dive into the "About" section to learn about my career and expertise, or explore the "Projects" section for a closer look at my innovative work. 
-Stay updated with my latest thoughts and insights in the "Blog" section. 
-Whether you're a fellow professional, a collaborator, or just curious, this portfolio offers a window into my world of data science and creativity.
+  Explore my professional portfolio to discover my work as a Data Scientist. 
+  Delve into my career background in the "About" section, check out my projects highlighting my skills and creativity, 
+  and read my latest insights in the "Blog" section. This site is a curated collection of my experiences, projects, and thoughts in the realm of data science.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://paspring.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  paspring
