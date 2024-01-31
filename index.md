@@ -5,4 +5,3 @@
 layout: home
 author_profile: True
 ---
-Hello World!
