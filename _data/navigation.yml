@@ -1,7 +1,10 @@
 # main links
 main:
-  - title: "Projects"
-  - title: "Courses and Certifications"
+  - title: "Portfolio"
+    url: /portfolio/
+  - title: "Continuous Learning"
+    url: /continuous-learning/
   - title: "Resources"
+    url: "continuos-learning"
   - title: "About Me"
     url: "/about/"

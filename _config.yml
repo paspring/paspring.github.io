@@ -50,6 +50,7 @@ plugins:
 
 classes: wide
 layout: splash
+paginate: 3
 
 author:
   name: "Pablo Andres
@@ -70,3 +71,10 @@ author:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/paspring"
 
+collections:
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
+  continuous_learning:
+    output: true
+    permalink: /continuous-learning/:path/ 
