@@ -78,3 +78,10 @@ collections:
   continuous_learning:
     output: true
     permalink: /continuous-learning/:path/ 
+  experience:
+    output: true
+    permalink: /about/experience/:path/
+  education:
+    output: true
+    permalink: /about/education/:path/
+  
