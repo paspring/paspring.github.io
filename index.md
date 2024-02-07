@@ -47,7 +47,7 @@ features_extras_learning:
     alt: "education background"
     title: "Educational Background"
     excerpt: "Explore My Academic Journey, including studies in physics, education, and engineering, along with insights into the subjects and courses that shaped my analytical capabilities and technical expertise."
-    url: "/education/"
+    url: "/educational-background/"
     btn_class: "btn--primary"
     btn_label: "Read More"
 

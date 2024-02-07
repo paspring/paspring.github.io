@@ -1,11 +1,10 @@
 ---
-header:
-  teaser: /assets/images/education/bachelor-physics.webp
 layout: single  
 title: My Bachelor's Degree Journey in Physics at Pontificia Universidad Católica de Chile  
+permalink: /education/bachelor-physics-puc/
 author_profile: true 
-permalink: /
 ---
+PAGES
 **Embarking on a Path of Discovery and Innovation**
 
 Pursuing a Bachelor's degree in Physics at the Pontificia Universidad Católica de Chile was a pivotal chapter in my academic and professional journey. This prestigious institution, known for its rigorous standards and commitment to fostering a deep understanding of the physical world, provided an ideal environment for intellectual growth and discovery.
