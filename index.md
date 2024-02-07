@@ -4,7 +4,7 @@ author_profile: true
 feature_row_portfolio:
   - image_path: /assets/images/portfolio.jpg
     alt: "Portfolio"
-    excerpt: "Here you have a carefully curated showcase of my work in data science, analytics, and visualization. Here you have the gateway to exploring the narratives each dataset tells and the tangible outcomes achieved."
+    excerpt: "Here is a showcase of my professional expertise in data science, analytics, and visualization. This portfolio provides a comprehensive overview of my proficiency across various data roles, featuring examples of past projects and highlighting areas I aspire to explore in the future."
     url: "/portfolio/"
     btn_class: "btn--primary"
     btn_label: "Enter Portfolio"
@@ -13,15 +13,15 @@ features_extras_about_me:
   - image_path: /assets/images/work-experience.jpg
     alt: "work experience"
     title: "Work Experience"
-    excerpt: "Explore My Work Experience: Discover the roles and positions I've held throughout my career, along with valuable insights into my professional journey and accomplishments."
-    url: ""
+    excerpt: "Discover the roles and positions I've held throughout my career, along with valuable insights into my professional journey and accomplishments."
+    url: "/experiences-general/"
     btn_class: "btn--primary"
     btn_label: "Read More"
 
   - image_path: /assets/images/resume.jpg
     alt: "resume"
     title: "Resume"
-    excerpt: "Download My Resume: Click the button below to access my resume and learn more about my qualifications and professional background."
+    excerpt: "Click the button below to access my resume and learn more about my qualifications and professional background."
     url: "/about/"
     btn_class: "btn--primary"
     btn_label: "Read More"
@@ -47,7 +47,7 @@ features_extras_learning:
     alt: "education background"
     title: "Educational Background"
     excerpt: "Explore My Academic Journey, including studies in physics, education, and engineering, along with insights into the subjects and courses that shaped my analytical capabilities and technical expertise."
-    url: ""
+    url: "/education/"
     btn_class: "btn--primary"
     btn_label: "Read More"
 
@@ -55,7 +55,7 @@ features_extras_learning:
     alt: "Blog"
     title: "Blog"
     excerpt: "Discover a wealth of guides and posts on a wide range of technical topics. Explore in-depth insights and practical advice to expand your knowledge and skills in various domains."
-    url: ""
+    url: "/posts/"
     btn_class: "btn--primary"
     btn_label: "Read More"
 ---
@@ -101,7 +101,7 @@ features_extras_learning:
 
 
 <div class="grid__wrapper">
-  <h2 style="text-align: right;">Latest Posts</h2>
+  <h2 style="text-align: center;">Latest Posts</h2>
   {% for post in site.posts limit:4 %}
     {% include archive-single.html type="grid" %}
   {% endfor %}

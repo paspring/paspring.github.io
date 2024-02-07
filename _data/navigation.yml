@@ -4,7 +4,7 @@ main:
     url: /portfolio/
   - title: "Continuous Learning"
     url: /continuous-learning/
-  - title: "Resources"
-    url: "continuos-learning"
+  - title: "Blog"
+    url: "/blog/"
   - title: "About Me"
     url: "/about/"
