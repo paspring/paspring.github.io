@@ -1,0 +1,43 @@
+<!-- _includes/logo_and_text.html -->
+<style>
+    /* Default CSS styling */
+    .logo-and-text {
+        display: flex;
+        align-items: center; /* Center align items vertically */
+    }
+
+    .logo-and-text .logo {
+        width: auto; /* Adjust logo size if necessary, while ensuring it's not stretched */
+        max-width: 100px; /* Example size, adjust as needed */
+        height: auto;
+        margin-right: 20px; /* Adjust this value to control the space between the logo and the text */
+    }
+
+    .logo-and-text .text {
+        text-align: left; /* Ensures text justification within this component */
+    }
+
+    .logo-and-text .text p {
+        margin: 0; /* Removes default margin for a tighter text layout */
+    }
+
+    .logo-and-text .text p:first-child {
+        font-size: 1.5em; /* Example size, adjust as needed */
+        font-weight: bold;
+    }
+
+    .logo-and-text .text p:last-child {
+        font-size: 1em; /* Example size, adjust as needed */
+        font-style: italic;
+    }
+</style>
+
+<div class="logo-and-text">
+    <a href="{{ include.url }}">
+        <img class="logo" src="{{ include.logo | relative_url }}" alt="Logo">
+    </a>
+    <div class="text">
+        <p>{{ include.line1 }}</p>
+        <p>{{ include.line2 }}</p>
+    </div>
+</div>

@@ -50,7 +50,8 @@ plugins:
 
 classes: wide
 layout: splash
-paginate: 3
+paginate: 5
+paginate_path: "/page:num/"
 
 author:
   name: "Pablo Andres
@@ -78,3 +79,7 @@ collections:
   continuous_learning:
     output: true
     permalink: /continuous-learning/:path/ 
+  experience:
+    output: true
+    permalink: /about/experience/:path/
+  
