@@ -82,7 +82,4 @@ collections:
   experience:
     output: true
     permalink: /about/experience/:path/
-  education:
-    output: true
-    permalink: /about/education/:path/
   

@@ -30,10 +30,10 @@ A summary of my professional journey demonstrating expertise in data science, an
 ### Education
 My academic journey has equipped me with a solid foundation in physics and engineering, complemented by a dedication to education and continuous learning. Below are links to pages detailing my degrees and the knowledge and skills acquired during my studies.
 
-- [Master’s Degree in Physics - The Pontifical Catholic University of Chile]({% link _education/masters-physics-puc.md %})
-- [Bachelor of Industrial Engineering and Operations Research - Major University of Chile]({% link _education/bachelor-industrial-engineering-major-university.md %})
-- [Bachelor’s Degree in Education - The Pontifical Catholic University of Chile]({% link _education/bachelors-education-puc.md %})
-- [Bachelor’s Degree in Physics - The Pontifical Catholic University of Chile]({% link _education/bachelors-physics-puc.md %})
+- [Master’s Degree in Physics - The Pontifical Catholic University of Chile](})
+- [Bachelor of Industrial Engineering and Operations Research - Major University of Chile]()
+- [Bachelor’s Degree in Education - The Pontifical Catholic University of Chile]()
+- [Bachelor’s Degree in Physics - The Pontifical Catholic University of Chile]({% link _pages/education/bachelors-physics-puc.md %})
 
 ---
 

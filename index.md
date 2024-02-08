@@ -59,7 +59,7 @@ features_extras_learning:
     btn_class: "btn--primary"
     btn_label: "Read More"
 ---
-<div style="font-size: 1.5em; letter-spacing: 0.05em; text-align: center; font-style: italic;">
+<div style="font-size: 1em; letter-spacing: 0.05em; text-align: center; font-style: italic;">
   {% for intro in site.data.intros %}
     {% if intro.id == 'welcome' %}
       {% include intro_section.html excerpt=intro.excerpt %}
@@ -67,7 +67,7 @@ features_extras_learning:
   {% endfor %}
 </div>
 ---
-<div style="font-size: 1.5em; letter-spacing: 0.05em; text-align: right;">
+<div style="font-size: 1em; letter-spacing: 0.05em; text-align: right;">
   {% for intro in site.data.intros %}
     {% if intro.id == 'first_break' %}
       {% include intro_section.html excerpt=intro.excerpt %}
@@ -94,11 +94,10 @@ features_extras_learning:
   {% endfor %}
 </div>
 
-<h2 style="font-size: 1.5em; letter-spacing: 0.05em; text-align: center;">Learning Profile</h2>
+<h2 style="font-size: 1m; letter-spacing: 0.05em; text-align: center;">Learning Profile</h2>
 <div class="feature__wrapper">
   {% include feature_row.html id="features_extras_learning"%}
 </div>
-
 
 <div class="grid__wrapper">
   <h2 style="text-align: center;">Latest Posts</h2>
