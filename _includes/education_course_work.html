@@ -1,0 +1,36 @@
+{% comment %} _includes/education_course_work.html {% endcomment %}
+
+<style>
+    .collapsible {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    .collapsible summary {
+        cursor: pointer;
+        font-weight: bold;
+        padding: 5px 10px;
+    }
+    .collapsible summary:hover {
+        background-color: #f0f0f0;
+    }
+    .collapsible ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    .collapsible li {
+        padding: 5px 10px;
+    }
+    </style>
+
+
+<details class="collapsible">
+    <summary><strong>{{ include.summary }}</strong></summary>
+    <ul>
+        {% for item in include.items %}
+            <li><strong>{{ item.title }}</strong>: {{ item.description }}</li>
+        {% endfor %}
+    </ul>
+</details>
+

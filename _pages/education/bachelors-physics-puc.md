@@ -2,6 +2,106 @@
 layout: single  
 permalink: /education/bachelors-physics-puc/
 author_profile: true 
+years:
+  first_year:
+    summary: "First Semester Courses"
+    items:
+      - title: "Introduction to Physics"
+        description: "An exploration of fundamental physical concepts, including motion, energy, and matter, setting the stage for a deeper understanding of the subject."
+      - title: "Physics Lab I"
+        description: "Hands-on experiments complementing theoretical knowledge, focusing on measurement techniques and data analysis."
+      - title: "Calculus I"
+        description: "Introduction to differential and integral calculus, emphasizing its application in physical sciences."
+      - title: "Algebra and Geometry"
+        description: "Study of algebraic structures, vector spaces, and geometric transformations, laying the mathematical groundwork for physics."
+  second_year:
+    summary: "Second Semester Courses"
+    items:
+      - title: "Classical Mechanics I"
+        description: "Examination of Newtonian mechanics, covering laws of motion and the principles of force, mass, and acceleration."
+      - title: "Physics Lab II"
+        description: "Further experimentation in mechanics, fostering practical understanding and proficiency in laboratory practices."
+      - title: "Calculus II"
+        description: "Continuation of Calculus I, introducing multivariable calculus and its use in physics."
+      - title: "Linear Algebra"
+        description: "Concepts of linear equations, matrices, and determinants, essential for quantum mechanics and other areas of physics."
+  third_year:
+    summary: "Third Semester Courses"
+    items:
+      - title: "Thermodynamics and Kinetic Theory"
+        description: "Study of energy transfer, thermodynamic processes, and the behavior of gases."
+      - title: "Calculus III"
+        description: "Advanced calculus topics, focusing on vector calculus and its applications in physics."
+      - title: "Introduction to Programming"
+        description: "Basics of computer programming, equipping students with computational tools for problem-solving in physics."
+      - title: "Differential Equations"
+        description: "A crucial study of the mathematical equations that describe the behavior of dynamic systems. This course covers methods for solving first and higher-order differential equations, applications to physical systems, and introduces the Laplace transform."
+  fourth_year:
+    summary: "Fourth Semester Courses"
+    items:
+      - title: "Classical Mechanics II"
+        description: "Advanced topics in mechanics, including rotational dynamics and conservation laws."
+      - title: "Electromagnetism"
+        description: "In-depth study of electric and magnetic fields and their interactions with matter."
+      - title: "Physics Lab III"
+        description: "Experiments in optics and electromagnetism, reinforcing theoretical knowledge with practical application."
+      - title: "Methods of Physics I"
+        description: "Introduction to the analytical and computational methods used in physics research."
+      - title: "Advanced Programming"
+        description: "A course focused on developing high-level programming skills used in simulations and analysis of physical systems, covering algorithm optimization and object-oriented programming."
+  fifth_year:
+    summary: "Fifth Semester Courses"
+    items:
+      - title: "Waves and Optics"
+        description: "Exploration of wave phenomena, optical instruments, and the nature of light."
+      - title: "Modern Physics"
+        description: "Covers the groundbreaking developments of the 20th century, including special relativity and the early concepts of quantum theory."
+      - title: "Physics Lab IV"
+        description: "Advanced laboratory experiments, often related to modern physics topics."
+      - title: "Methods of Physics II"
+        description: "Further study of research methodologies, including statistical analysis and advanced computational techniques."
+      - title: "Statistics and Probability"
+        description: "An exploration of statistical methods and probability theory essential for analyzing data and modeling uncertainty in physical phenomena."
+  sixth_year:
+    summary: "Sixth Semester Courses"
+    items:
+      - title: "Quantum Physics I"
+        description: "Introduction to the principles of quantum mechanics, wave functions, and quantum states."
+      - title: "Physics Lab V"
+        description: "Experiments related to quantum and modern physics, enhancing theoretical understanding with hands-on experience."
+      - title: "Electromagnetic Theory"
+        description: "A fundamental study of electric and magnetic fields and their interactions, covering Maxwell's equations, wave propagation, and applications in various technologies."
+      - title: "Machine Learning for Physicists"
+        description: "Introduces machine learning algorithms and their application in data analysis and modeling physical systems, with an emphasis on mathematical understanding and practical utilization."
+  seventh_year:
+    summary: "Seventh Semester Courses"
+    items:
+      - title: "Quantum Physics II"
+        description: "Continued exploration of quantum mechanics, including more advanced topics and applications."
+      - title: "Physics Lab VI"
+        description: "Advanced quantum experiments, often involving sophisticated techniques and equipment."
+      - title: "Electronics and Microcontrollers I"
+        description: "Introduction to electronics principles with a focus on microcontrollers, covering electronic components, circuits, and programming for various devices."
+      - title: "Laser and Non-Linear Optics"
+        description: "Detailed study of laser physics and non-linear optical systems, including laser operation, applications, and fundamental principles."
+  eighth_year:
+    summary: "Eighth Semester Courses"
+    items:
+      - title: "Statistical Mechanics"
+        description: "Understanding the statistical nature of physical systems and the laws governing them."
+      - title: "Advanced Physics Lab"
+        description: "A capstone laboratory course, involving complex experiments and independent projects."
+      - title: "Material Science"
+        description: "An exploration of material properties and applications, covering material structure, electronic properties, and mechanical behavior."
+      - title: "Electronics and Microcontrollers II"
+        description: "Continuation of Electronics and Microcontrollers I, covering advanced circuit design and microcontroller functionality, often involving interactive device projects."
+  ninth_year:
+    summary: "Ninth Semester Courses"
+    items:
+      - title: "Research Methods"
+        description: "A course designed to equip students with the tools necessary for conducting scientific research, covering hypothesis formulation, data collection, analysis, and communication."
+      - title: "Research Thesis"
+        description: "An intensive research project requiring students to investigate a novel question or problem in physics, resulting in a formal thesis."
 ---
 <style>
   li, p {
@@ -25,97 +125,7 @@ In addition to a broad physics education, I specialized in condensed matter phys
 ---
 
 ### Course Work
-
-<details>
-<summary><strong>1st Semester</strong></summary>
-<ul>
-  <li><strong>Introduction to Physics</strong>: An exploration of fundamental physical concepts, including motion, energy, and matter, setting the stage for a deeper understanding of the subject.</li>
-  <li><strong>Physics Lab I</strong>: Hands-on experiments complementing theoretical knowledge, focusing on measurement techniques and data analysis.</li>
-  <li><strong>Calculus I</strong>: Introduction to differential and integral calculus, emphasizing its application in physical sciences.</li>
-  <li><strong>Algebra and Geometry</strong>: Study of algebraic structures, vector spaces, and geometric transformations, laying the mathematical groundwork for physics.</li>
-</ul>
-</details>
-
-<details>
-<summary><strong>2nd Semester</strong></summary>
-<ul>
-  <li><strong>Classical Mechanics I</strong>: Examination of Newtonian mechanics, covering laws of motion and the principles of force, mass, and acceleration.</li>
-  <li><strong>Physics Lab II</strong>: Further experimentation in mechanics, fostering practical understanding and proficiency in laboratory practices.</li>
-  <li><strong>Calculus II</strong>: Continuation of Calculus I, introducing multivariable calculus and its use in physics.</li>
-  <li><strong>Linear Algebra</strong>: Concepts of linear equations, matrices, and determinants, essential for quantum mechanics and other areas of physics.</li>
-</ul>
-</details>
-
-<details>
-<summary><strong>3rd Semester</strong></summary>
-<ul>
-  <li><strong>Thermodynamics and Kinetic Theory</strong>: Study of energy transfer, thermodynamic processes, and the behavior of gases.</li>
-  <li><strong>Calculus III</strong>: Advanced calculus topics, focusing on vector calculus and its applications in physics.</li>
-  <li><strong>Introduction to Programming</strong>: Basics of computer programming, equipping students with computational tools for problem-solving in physics.</li>
-  <li><strong>Differential Equations</strong>: A crucial study of the mathematical equations that describe the behavior of dynamic systems. This course covers methods for solving first and higher-order differential equations, applications to physical systems, and introduces the Laplace transform. Emphasized are both analytical solutions and the interpretation of these equations in the context of physics.</li>
-</ul>
-</details>
-
-<details>
-<summary><strong>4th Semester</strong></summary>
-<ul>
-  <li><strong>Classical Mechanics II</strong>: Advanced topics in mechanics, including rotational dynamics and conservation laws.</li>
-  <li><strong>Electromagnetism</strong>: In-depth study of electric and magnetic fields and their interactions with matter.</li>
-  <li><strong>Physics Lab III</strong>: Experiments in optics and electromagnetism, reinforcing theoretical knowledge with practical application.</li>
-  <li><strong>Methods of Physics I</strong>: Introduction to the analytical and computational methods used in physics research.</li>
-  <li><strong>Advanced Programming</strong>: A course focused on developing high-level programming skills used in simulations and analysis of physical systems, covering algorithm optimization and object-oriented programming.</li>
-</ul>
-</details>
-
-<details>
-<summary><strong>5th Semester</strong></summary>
-<ul>
-  <li><strong>Waves and Optics</strong>: Exploration of wave phenomena, optical instruments, and the nature of light.</li>
-  <li><strong>Modern Physics</strong>: Covers the groundbreaking developments of the 20th century, including special relativity and the early concepts of quantum theory.</li>
-  <li><strong>Physics Lab IV</strong>: Advanced laboratory experiments, often related to modern physics topics.</li>
-  <li><strong>Methods of Physics II</strong>: Further study of research methodologies, including statistical analysis and advanced computational techniques.</li>
-  <li><strong>Statistics and Probability</strong>: An exploration of statistical methods and probability theory essential for analyzing data and modeling uncertainty in physical phenomena.</li>
-</ul>
-</details>
-
-<details>
-<summary><strong>6th Semester</strong></summary>
-<ul>
-  <li><strong>Quantum Physics I</strong>: Introduction to the principles of quantum mechanics, wave functions, and quantum states.</li>
-  <li><strong>Physics Lab V</strong>: Experiments related to quantum and modern physics, enhancing theoretical understanding with hands-on experience.</li>
-  <li><strong>Electromagnetic Theory</strong>: A fundamental study of electric and magnetic fields and their interactions. The course covers Maxwell's equations, wave propagation, and the application of electromagnetism in various technologies.</li>
-  <li><strong>Machine Learning for Physicists</strong>: Tailored for physicists, this course introduces machine learning algorithms and their application in data analysis and modeling physical systems. Emphasis is placed on understanding the mathematical underpinnings and utilizing machine learning tools for solving complex problems in physics.</li>
-</ul>
-
-</details>
-
-<details>
-<summary><strong>7th Semester</strong></summary>
-
-<ul>
-  <li><strong>Quantum Physics II</strong>: Continued exploration of quantum mechanics, including more advanced topics and applications.</li>
-  <li><strong>Physics Lab VI</strong>: Advanced quantum experiments, often involving sophisticated techniques and equipment.</li>
-  <li><strong>Electronics and Microcontrollers I</strong>: Introduction to the principles of electronics with a focus on the use of microcontrollers. Students learn about electronic components, circuits, and the programming and application of microcontrollers in various devices.</li>
-  <li><strong>Laser and Non-Linear Optics</strong>: Detailed study of laser physics and the interaction of light with matter in non-linear optical systems. Topics include laser operation, applications of lasers in science and industry, and the fundamental principles of non-linear optics.</li>
-</ul>
-
-</details>
-
-<details>
-<summary><strong>8th Semester</strong></summary>
-<ul>
-  <li><strong>Statistical Mechanics</strong>: Understanding the statistical nature of physical systems and the laws governing them.</li>
-  <li><strong>Advanced Physics Lab</strong>: A capstone laboratory course, involving complex experiments and independent projects.</li>
-  <li><strong>Material Science</strong>: An exploration of the properties and applications of materials. This course covers the fundamentals of material structure, electronic properties, and mechanical behavior, linking concepts from physics, chemistry, and engineering to understand and design new materials.</li>
-  <li><strong>Electronics and Microcontrollers II</strong>: A continuation of Electronics and Microcontrollers I, this course delves deeper into complex circuit design and the advanced functionality of microcontrollers. Projects often include the creation of interactive devices or systems that integrate sensors and actuators.</li>
-</ul>
-</details>
-
-<details>
-<summary><strong>9th Semester</strong></summary>
-<ul>
-  <li><strong>Research Methods</strong>: A course designed to equip students with the tools necessary for conducting scientific research. It covers the entire research process, from formulating a hypothesis to collecting and analyzing data, as well as communicating findings.</li>
-  <li><strong>Research Thesis</strong>: A culmination of the Physics program, this intensive research project requires students to apply their knowledge to investigate a novel question or problem in physics, resulting in a formal thesis.</li>
-</ul>
-
-</details>
+{% for year in page.years %}
+    {% assign data = year[1] %}
+    {% include education_course_work.html summary=data.summary items=data.items %}
+{% endfor %}
