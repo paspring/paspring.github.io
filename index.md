@@ -85,8 +85,7 @@ features_extras_learning:
   {% include feature_row.html id="features_extras_about_me"%}
 </div>
 
-
-<div class="feature__wrapper" style="font-size: 1.5em; letter-spacing: 0.05em; text-align: center;">
+<div class="feature__wrapper" style="font-size: 1em; letter-spacing: 0.05em; text-align: center;">
   {% for intro in site.data.intros %}
     {% if intro.id == 'second_break' %}
       {% include intro_section.html excerpt=intro.excerpt %}
