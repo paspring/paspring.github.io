@@ -2,6 +2,9 @@
 layout: single  
 author_profile: true 
 permalink: /education/masters-physics-puc/
+toc: true
+toc_label: "Page Content"
+toc_icon: "cog"
 years:
   first_year:
     summary: "First Year Courses"
@@ -32,22 +35,69 @@ years:
   }
 </style>
 
-{% include logo_and_text.html logo='/assets/images/education/universidad-catolica-de-chile-logo2.png' line1='Master’s in Physics' line2='The Pontifical Catholic University of Chile' url='https://en.wikipedia.org/wiki/Pontifical_Catholic_University_of_Chile' %}
+{% include logo_and_text.html logo='/assets/images/education/universidad-catolica-de-chile-logo2.png' line1='Master’s in Physics' line2='The Pontifical Catholic University of Chile' url='https://www.uc.cl/en' %}
 
-### Program Description: 
-<p>
-My Master's degree in Physics, specializing in Material Sciences, represented a rigorous exploration into the forefront of experimental techniques and the nuanced interplay of technology and research. The program was a crucible for refining my expertise, particularly in the realm of Chemical Vapor Deposition (CVD), a sophisticated process at the heart of crafting groundbreaking materials with applications spanning electronics, aerospace, and beyond.
+### Program Description
+<section>
+      <p>My Master's degree in Experimental Physics focused on providing an in-depth understanding of the fundamental concepts and advanced techniques in experimental research within the realm of physics.</p>
+      <p>The program emphasized hands-on laboratory experience, equipping me with the skills to design, conduct, and analyze sophisticated experiments.</p>
+      <p>Through this rigorous curriculum, I gained expertise in cutting-edge experimental methods, data analysis, and the application of theoretical physics to real-world problems, preparing me for a leading role in scientific research and innovation.</p>
 
-In this advanced study, my engagement with experimental physics was not merely academic; it was a deep dive into the mechanics of data acquisition, signal processing, and the mastery of advanced instrumentation. This experience was underpinned by a comprehensive application of data analysis and modeling techniques, through which I wielded statistical methods and machine learning algorithms to distill clarity from the complexity of experimental data.
+</section>
+---
 
-A cornerstone of my work centered on the development of interactive dashboards, serving as a bridge between raw data and actionable insights. This endeavor not only honed my software development skills but also refined my ability to automate processes, thereby streamlining the analysis and presentation of data.
+### Key Skills Developed
+<section>
+    <ul>
+        <li><strong>Chemical Vapor Deposition (CVD) Expertise:</strong> Deep understanding and application in crafting advanced materials.</li>
+        <li><strong>Data Acquisition and Signal Processing:</strong> Proficiency in collecting and analyzing experimental data.</li>
+        <li><strong>Advanced Instrumentation Mastery:</strong> Skilled use of sophisticated tools for experimental physics.</li>
+        <li><strong>Data Analysis and Modeling:</strong> Application of statistical methods and machine learning for research insights.</li>
+        <li><strong>Software Development for Interactive Dashboards:</strong> Development of tools for data visualization and analysis automation.</li>
+        <li><strong>Material Science Innovation:</strong> Research and development focused on enhancing material properties through technology.</li>
+    </ul>
+</section>
+---
 
-Central to my specialization was a focus on the research and development of material surfaces, a domain where the intersection of physical principles and technological innovation reveals potent applications. My pursuit here was not just academic curiosity but a commitment to pushing the boundaries of material science, leveraging the power of machine learning and model optimization to forecast and enhance material properties with unprecedented precision.
+### Specialization
+<section>
+    <p>Focus on Material Sciences, particularly in the application of Chemical Vapor Deposition (CVD) techniques for the development of novel materials. This specialization explores the cutting edge of material technology, with a strong emphasis on experimental research and practical applications in various industries.</p>
+</section>
+---
 
-My path through material sciences has been marked by an unwavering dedication to discovery and the creative application of insights gained. This experience serves as a clear indicator of my profound comprehension and wide-ranging abilities, showcasing my potential to make significant contributions and drive innovation within the tech industry.
+### Tools & Technologies
+<section>
+    <ul>
+        <li>Python for data analysis and machine learning</li>
+        <li>LabVIEW for instrumentation control and data acquisition</li>
+        <li>Matplotlib and Plotly for data visualization</li>
+        <li>SQL databases for data management</li>
+        <li>Machine learning libraries (e.g., scikit-learn, TensorFlow)</li>
+    </ul>
+</section>
+---
 
-</p>
-### Course Work: 
+### Industry Applications
+<section>
+    <ul>
+        <li>Electronics: Development of advanced materials for semiconductors and components</li>
+        <li>Aerospace: Crafting lightweight and durable materials for aerospace engineering</li>
+        <li>Energy: Innovations in materials for solar panels and energy storage solutions</li>
+        <li>Nanotechnology: Creating materials at the nanoscale for various applications</li>
+        <li>Biotechnology: Application of materials science in medical devices and diagnostics</li>
+    </ul>
+</section>
+---
+
+### Achievements
+<section>
+    <ul>
+        <li><strong>Full Scholarship for Master's Degree in Physics:</strong> Awarded a full scholarship by the Physics Institute PUC Chile for my master's degree in Physics, in recognition of my outstanding academic record in my bachelor's degree. This scholarship underscored my academic achievements and potential for contributing to the advancement of physics.</li>
+    </ul>
+</section>
+
+---
+### Course Work
 {% for year in page.years %}
     {% assign data = year[1] %}
     {% include education_course_work.html summary=data.summary items=data.items %}

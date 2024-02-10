@@ -2,6 +2,9 @@
 layout: single  
 author_profile: true 
 permalink: /education/bachelor-industrial-engineering-major-university/
+toc: true
+toc_label: "Page Content"
+toc_icon: "cog"
 years:
   semester_0:
     summary: "Semester 0 Courses"
@@ -101,44 +104,76 @@ years:
       - title: "Project Management"
         description: "Introduces project management principles, including planning, executing, and closing projects successfully."
 ---
-{% include logo_and_text.html logo='/assets/images/education/um-logo.jpg' line1='Bacherlor’s Degree in Industrial Engineering' line2='Major University of Chile' url='https://www.umayor.cl/um/carreras/ingenieria-civil-industrial-santiago' %}
+<style>
+  li, p {
+    text-align: justify;
+  }
+</style>
 
+<style>
+  li, p {
+    text-align: justify;
+  }
+</style>
+
+{% include logo_and_text.html logo='/assets/images/education/um-logo.jpg' line1='Bacherlor’s Degree in Industrial Engineering' line2='Mayor University of Chile' url='https://www.umayor.cl/um/carreras/ingenieria-civil-industrial-santiago' %}
+
+### Program Description
+<section>
+    <p>Industrial Engineering stands as a pivotal field within Chilean higher education, reflecting the country's commitment to advancing its industrial sector through innovation and efficiency. This field's dynamic nature stems from its ability to adapt and respond to the evolving demands of modern industry, seamlessly integrating engineering principles with the latest advancements in technology and management practices.</p>
+
+    <p>The program is inherently multidisciplinary, offering a rich blend of engineering fundamentals, business optimization strategies, and sophisticated analytical techniques. Students are immersed in a curriculum that emphasizes critical thinking, problem-solving, and the application of quantitative methods to real-world challenges. This comprehensive approach ensures that graduates are not only proficient in technical skills but also in strategic planning and operational optimization.</p>
+
+    <p>Upon completion, graduates are uniquely equipped to drive efficiency and sustainability in diverse sectors, from manufacturing to services. They excel in maximizing resource utilization, streamlining processes, and implementing data-driven strategies that lead to tangible improvements in performance and productivity. The program cultivates leaders capable of making informed decisions that positively impact industries and the broader economy.</p>
+
+</section>
 ---
 
-<div class="degree-profile"> 
-
-  <p>Industrial Engineering is a dynamic field of engineering deeply rooted in Chilean higher education. This multidisciplinary program blends engineering principles, business optimization, and advanced analytical techniques. Graduates emerge equipped to drive efficiency, maximize resource utilization, and implement data-driven strategies across diverse industries.</p>
-
-  <h4>Key Skills:</h4>
+### Key Skills Developed
+<section>
   <ul>
-    <li>Optimization Modeling: Design and implementation of mathematical models (linear/non-linear programming, queuing theory, simulation) for resource allocation, system design, and decision-making.</li>
-    <li>Supply Chain Analytics: Demand forecasting, inventory optimization, network design, and risk assessment within complex supply chains.</li>
-    <li>Data-Driven Insights: Statistical modeling, predictive analytics, and machine learning techniques for transforming data into actionable business solutions.</li>
-    <li>Strategic Problem-solving: Applying critical thinking and optimization methods to identify and improve inefficiencies within organizations.</li>
-    <li>Project Management: Incorporating risk analysis and optimization concepts into project management.</li> 
+      <li><strong>Optimization Modeling:</strong> Design and implementation of mathematical models (linear/non-linear programming, queuing theory, simulation) for resource allocation, system design, and decision-making.</li>
+      <li><strong>Supply Chain Analytics:</strong> Demand forecasting, inventory optimization, network design, and risk assessment within complex supply chains.</li>
+      <li><strong>Data-Driven Insights:</strong> Statistical modeling, predictive analytics, and machine learning techniques for transforming data into actionable business solutions.</li>
+      <li><strong>Strategic Problem-solving:</strong> Applying critical thinking and optimization methods to identify and improve inefficiencies within organizations.</li>
+      <li><strong>Project Management:</strong> Incorporating risk analysis and optimization concepts into project management.</li>
   </ul>
+</section>
+---
 
-  <h4>Tools & Technologies:</h4>
+### Specialization
+<section>
+    <p><strong>Operations Research</strong>: The Operations Research specialization empowers students with advanced proficiency in mathematical modeling, optimization techniques, and decision analysis. It aims to cultivate experts skilled in streamlining complex systems, enhancing decision-making, and boosting operational efficiency. Graduates excel in leveraging quantitative methods to tackle industry-wide challenges, fostering innovation, and driving strategic enhancements that bolster organizational success.</p>
+
+</section>
+---
+
+### Tools & Technologies
+<section>
   <ul>
     <li>Python</li>
     <li>R</li>
-    <li>Excel</li> 
-  </ul> 
+    <li>Excel</li>
+  </ul>
+</section>
+---
 
-  <h4>Industry Applications:</h4> 
+### Industry Applications
+<section>
   <ul>
     <li>Management Consulting</li>
-    <li>Technology and Data Science</li> 
-    <li>Manufacturing and Logistics</li> 
-    <li>Finance and Risk Management</li> 
-    <li>Research and Academia</li>  
+    <li>Technology and Data Science</li>
+    <li>Manufacturing and Logistics</li>
+    <li>Finance and Risk Management</li>
+    <li>Research and Academia</li>
   </ul>
+</section>
 
-  <p>My experience demonstrates a strong ability to translate operations research methodologies into tangible business improvements.</p> 
+<section>
+  <p>My experience demonstrates a strong ability to translate operations research methodologies into tangible business improvements.</p>
+</section>
 
-</div> 
-
-## Course Work
+### Course Work
 Here's the complete engineering degree program with course descriptions, distributed across all semesters:
 
 {% for year in page.years %}

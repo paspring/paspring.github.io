@@ -19,21 +19,21 @@ Data Scientist and Analyst with 10 years of professional experience, including a
 ### Work Experience
 A summary of my professional journey demonstrating expertise in data science, analytics, and technology application across various roles. For detailed insights into my projects, achievements, and the impact of my work, please visit the individual pages linked below.
 
-- [Data Scientist – H1 Insights, New York (2023-Present)]({% link _experience/data-scientist-h1-insights.md %})
-- [Senior Data Analyst – H1 Insights, New York (2022-2023)]({% link _experience/senior-data-analyst-h1-insights.md %})
-- [Research Data Analyst – H1 Insights, New York (2021-2022)]({% link _experience/research-data-analyst-h1-insights.md %})
-- [College Lecturer - University of the Andes, Santiago (2016-2021)]({% link _experience/college-lecturer-university-of-the-andes.md %})
-- [Research Data Analyst- The Pontifical Catholic University of Chile, Santiago (2010-2018)]({% link _experience/research-data-analyst-puc-chile.md %})
+- [Data Scientist – H1 Insights, New York (2023-Present)]()
+- [Senior Data Analyst – H1 Insights, New York (2022-2023)]()
+- [Research Data Analyst – H1 Insights, New York (2021-2022)]()
+- [College Lecturer - University of the Andes, Santiago (2016-2021)]()
+- [Research Data Analyst- The Pontifical Catholic University of Chile, Santiago (2010-2018)]() 
 
 ---
 
 ### Education
 My academic journey has equipped me with a solid foundation in physics and engineering, complemented by a dedication to education and continuous learning. Below are links to pages detailing my degrees and the knowledge and skills acquired during my studies.
 
-- [Master’s Degree in Physics - The Pontifical Catholic University of Chile](})
-- [Bachelor of Industrial Engineering and Operations Research - Major University of Chile]()
-- [Bachelor’s Degree in Education - The Pontifical Catholic University of Chile]()
+- [Master’s Degree in Physics - The Pontifical Catholic University of Chile]({% link _pages/education/masters-physics-puc.md %})
+- [Bachelor of Industrial Engineering and Operations Research - Mayor University of Chile]({% link _pages/education/bachelor-industrial-engineering-major-university.md%})
 - [Bachelor’s Degree in Physics - The Pontifical Catholic University of Chile]({% link _pages/education/bachelors-physics-puc.md %})
+- [Bachelor’s Degree in Education - The Pontifical Catholic University of Chile]({% link _pages/education/bachelors-education-puc.md %})
 
 ---
 

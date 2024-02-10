@@ -1,0 +1,75 @@
+<!-- _includes/logo_and_text_education_background_page.html -->
+<style>
+    /* Adjusted CSS for a larger box and improved layout */
+    .logo-and-text {
+        display: flex;
+        align-items: center;
+        padding: 20px; /* Increased padding for a larger box */
+        border-radius: 8px;
+        transition: box-shadow 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        position: relative;
+        overflow: hidden;
+        width: auto; /* Adjust as needed, or use max-width for specific size */
+        margin-bottom: 20px; /* Adds some space below each logo-and-text box */
+        height: 250px;
+    }
+
+    .logo-and-text:hover {
+        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .logo {
+        max-width: 100px; /* Slightly larger logo size, adjust as needed */
+        height: auto;
+        margin-right: 20px;
+    }
+
+    .text {
+        text-align: left;
+        flex-grow: 1;
+        padding-right: 50px; /* Adjusted padding to ensure space for 'Learn More' button */
+    }
+
+    .text p {
+        margin: 0;
+        line-height: 1.6; /* Slightly increased line height for better readability */
+        font-size: 1em; /* Adjust base font size if needed for space */
+    }
+
+    .text p:first-child {
+        font-size: 1.2em; /* Larger font size for the first line */
+        font-weight: bold;
+        color: #333;
+    }
+
+    .text p:last-child {
+        font-size: 1em;
+        font-style: italic;
+        color: #666;
+    }
+
+    .learn-more {
+        display: block;
+        position: absolute;
+        bottom: 20px; /* Adjusted position to better fit within the larger box */
+        right: 20px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease, visibility 0.5s;
+    }
+
+    .logo-and-text:hover .learn-more {
+        opacity: 1;
+        visibility: visible;
+    }
+</style>
+
+<div class="logo-and-text">
+    <img class="logo" src="{{ include.logo | relative_url }}" alt="Logo">
+    <div class="text">
+        <p>{{ include.line1 }}</p>
+        <p>{{ include.line2 }}</p>
+    </div>
+    <a href="{{ include.url }}" class="learn-more btn btn--primary">Learn More</a>
+</div>

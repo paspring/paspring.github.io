@@ -2,6 +2,9 @@
 layout: single  
 permalink: /education/bachelors-physics-puc/
 author_profile: true 
+toc: true
+toc_label: "Page Content"
+toc_icon: "cog"
 years:
   first_year:
     summary: "First Semester Courses"
@@ -109,22 +112,69 @@ years:
   }
 </style>
 
-{% include logo_and_text.html logo='/assets/images/education/universidad-catolica-de-chile-logo2.png' line1='Bachelor’s Degree in Physics' line2='The Pontifical Catholic University of Chile' url='https://en.wikipedia.org/wiki/Pontifical_Catholic_University_of_Chile' %}
+{% include logo_and_text.html logo='/assets/images/education/universidad-catolica-de-chile-logo2.png' line1='Bachelor’s Degree in Physics' line2='The Pontifical Catholic University of Chile' url='https://www.uc.cl/en' %}
 
 
-### Program Description:
+### Program Description
+<section>
+    <p>The Bachelor's Degree in Physics is a meticulously crafted program that bridges the theoretical underpinnings of physics with real-world applications. It aims to develop not only a profound understanding of physical laws and phenomena but also the ability to apply this knowledge creatively in various industries.</p>
 
-<p>
-My Bachelor's degree in Physics provided a comprehensive education grounded in the principles of physics and its applications, laying a solid foundation for a career in a wide range of industries, especially technology. Through this program, I developed a robust analytical mindset, critical for solving complex problems and innovating solutions. My studies covered key physics areas, including mechanics, electromagnetism, quantum mechanics, and thermal physics, which are essential for understanding the underlying principles of technological advancements.
+    <p>Through a curriculum that balances rigorous academic inquiry with hands-on experimentation, students are prepared to tackle complex problems, innovate, and lead in the advancement of science and technology.</p>
 
-I honed practical skills highly valued in the industry, such as data analysis, precision measurement, and computational modeling, through rigorous coursework and hands-on laboratory experiences. These skills are directly applicable to roles in research and development, quality assurance, and product design, enabling me to contribute effectively to interdisciplinary teams and projects.
-
-In addition to a broad physics education, I specialized in condensed matter physics with an emphasis on material science. This focus allowed me to explore the cutting-edge of materials technology, including the development and characterization of novel materials with applications in electronics, energy, and nanotechnology. This specialty complements my general physics background, equipping me with unique insights and capabilities to drive innovation in the technological sector.
-</p>
-
+    <p>Furthermore, the program is designed to equip alumni with the skills and knowledge necessary to thrive in both academic and industry environments. Graduates emerge ready to contribute to research, development, and innovation, making significant impacts wherever their careers may lead.</p>
+</section>
 ---
 
+### Key Skills
+<section>
+    <ul>
+        <li><strong>Data Analysis:</strong> Expertise in analyzing and interpreting complex datasets to derive meaningful insights.</li>
+        <li><strong>Precision Measurement:</strong> Proficiency in conducting precise measurements critical for experimental physics and technology development.</li>
+        <li><strong>Computational Modeling:</strong> Advanced skills in using computational methods to model physical systems and predict outcomes.</li>
+        <li><strong>Problem-solving:</strong> Ability to apply physics principles to solve complex problems and innovate solutions across various industries.</li>
+    </ul>
+</section>
+---
+
+### Specialization
+<section>
+    <p><strong>Condensed Matter Physics:</strong> Focus on material science, exploring the forefront of materials technology, including the development and characterization of novel materials for electronics, energy, and nanotechnology applications.</p>
+</section>
+---
+
+### Tools & Technologies
+<section>
+    <ul>
+        <li>MATLAB</li>
+        <li>Python</li>
+        <li>LabVIEW</li>
+    </ul>
+</section>
+---
+
+### Industry Applications
+<section>
+    <ul>
+        <li>Research and Development</li>
+        <li>Quality Assurance</li>
+        <li>Product Design</li>
+        <li>Technology and Data Science</li>
+        <li>Energy and Nanotechnology</li>
+    </ul>
+
+    <p>This physics program equips graduates with a broad yet specialized knowledge base, enabling them to contribute effectively to interdisciplinary teams and lead innovations in the technology sector.</p>
+</section>
+---
+
+### Achievements
+<section>
+    <ul>
+        <li><strong>President of the Republic of Chile Scholarship:</strong> Awarded a full scholarship for my Bachelor's degree in Physics due to my exemplary academic performance in high school. This prestigious scholarship, known in Spanish as the "Beca Presidente de la República de Chile," supported my undergraduate studies and recognized my potential to contribute significantly to the field of physics.</li>
+    </ul>
+</section>
+---
 ### Course Work
+Here’s the complete physics degree program with course descriptions, distributed across all semesters.
 {% for year in page.years %}
     {% assign data = year[1] %}
     {% include education_course_work.html summary=data.summary items=data.items %}
