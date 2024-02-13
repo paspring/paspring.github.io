@@ -1,6 +1,6 @@
 ---
 layout: single
-permalink: /experience/data-science/embedding-h1insights/
+permalink: _pages/experience/data-science/embedding-h1insights/
 author_profile: true
 toc: true
 toc_label: "Page Content"

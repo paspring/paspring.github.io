@@ -29,7 +29,7 @@ Led the innovative integration of AI and LLM technologies, incorporating ChromaD
 - Achieved a 45% increase in report processing speed and a 30% improvement in keyword extraction accuracy, facilitated by the efficient use of ChromaDB. Reduced manual review time by 25%, setting new standards for internal reporting mechanisms and demonstrating strong proficiency in AI and predictive analytics.
 
 
-**Advanced Probabilistic Entity Deduplication in Large-Scale Organizational Database Using PySpark** <br>
+**Probabilistic Entity Deduplication in Large-Scale Organizational Database Using PySpark** <br>
 Project Duration: Oct 2023 to March 2024 <br>
 [Learn More]({% link _pages/experience/data-science/probabilistic-em-pyspark.md %})
 
