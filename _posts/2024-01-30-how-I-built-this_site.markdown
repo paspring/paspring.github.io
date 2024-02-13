@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Building My Jekyll Site with Docker and Minimal Mistakes"
+title: Building My Jekyll Site with Docker and Minimal Mistakes
 date:   2024-01-28 05:31:45 +0000
 author_profile: true
 toc: true
