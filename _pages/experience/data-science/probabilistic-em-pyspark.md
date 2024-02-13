@@ -5,18 +5,14 @@ author_profile: true
 toc: true
 toc_label: "Page Content"
 toc_icon: "cog"
+title: "Advanced Probabilistic Entity Deduplication in Large-Scale Organizational Database Using PySpark"
 ---
-
-### Case Study: Advanced Probabilistic Entity Deduplication in Large-Scale Organizational Database Using PySpark
-
-#### Case Study Header
-- **Project Title:** Advanced Probabilistic Entity Deduplication in Large-Scale Organizational Database
-- **Company Name:** [Your Company Name]
-- **Duration:** [Start Date] to [End Date]
+**Company Name:** H1 Insight Inc <br>
+**Duration:** Oct 2023 - March 2024 
 
 #### Introduction
 - **Project Overview:** Directed a large-scale database deduplication project, leveraging advanced probabilistic models and entity matching techniques to enhance data integrity in an organizational database with over 1 million records.
-- **Your Role:** Data Scientist
+- **Role:** Data Scientist - Entity Matching Engineer
 
 #### Objectives
 - Develop and implement a sophisticated probabilistic entity deduplication system tailored for a large-scale organizational database.
