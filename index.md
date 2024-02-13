@@ -1,5 +1,7 @@
 ---
-layout: single
+layout: home
+entries_layout: grid
+classes: wide
 author_profile: true
 feature_row_portfolio:
   - image_path: /assets/images/portfolio.jpg
@@ -74,7 +76,7 @@ features_extras_learning:
     {% endif %}
   {% endfor %}
 </div>
-
+---
 <div class="feature__wrapper">
   <h2 style="font-size: 1.5em; letter-spacing: 0.05em; text-align: center;">Portfolio</h2>
   {% include feature_row.html id="feature_row_portfolio" type="left" %}
@@ -98,9 +100,4 @@ features_extras_learning:
   {% include feature_row.html id="features_extras_learning"%}
 </div>
 
-<div class="grid__wrapper">
-  <h2 style="text-align: center;">Latest Posts</h2>
-  {% for post in site.posts limit:10 %}
-    {% include archive-single.html type="grid" %}
-  {% endfor %}
-</div>
+{% include paginator.html %}

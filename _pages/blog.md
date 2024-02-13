@@ -1,13 +1,7 @@
 ---
-title: Blog
-layout: single
+title: "Blog"
+layout: archive
 permalink: /blog/
+author_profile: true
+grid: true
 ---
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      {{ post.excerpt }}
-    </li>
-  {% endfor %}
-</ul>

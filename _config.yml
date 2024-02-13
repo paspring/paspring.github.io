@@ -19,7 +19,7 @@ include:
   - _portfolio
   - _posts
 
-title: Advanced Analytics Portfolio
+title: Professional Portfolio
 email: paspring@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Explore my professional portfolio to discover my work as a Data Scientist. 
@@ -50,7 +50,7 @@ plugins:
 
 classes: wide
 layout: splash
-paginate: 5
+paginate: 3
 paginate_path: "/page:num/"
 
 author:
@@ -58,7 +58,9 @@ author:
   <br> 
   Spring Flores, M.S."
   avatar: "/assets/images/profiles.jpeg"
-  bio: "Data Scientist and Analyst 
+  bio: "Senior Data Analyst 
+  <br>
+  Data Scientist
   <br>
   10 Years of Experience 
   <br>
