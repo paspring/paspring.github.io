@@ -4,7 +4,7 @@ title: "Introduction to LangChain: Unleashing the Power of Language Models in Yo
 date: 2024-02-13
 author_profile: true
 toc: true
-excerpt: "This blog post aims to introduce LangChain, explore its capabilities, and provide resources with links for those looking to delve deeper into this innovative framework."
+excerpt: "This blog post aims to introduce LangChain, explore its capabilities, and provide resources with links for those looking to delve deeper into this innovative framework"
 header:
   teaser: /assets/images/posts/lang-chain-logo.jpg
 ---
