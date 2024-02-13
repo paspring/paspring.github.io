@@ -100,7 +100,7 @@ features_extras_learning:
 
 <div class="grid__wrapper">
   <h2 style="text-align: center;">Latest Posts</h2>
-  {% for post in site.posts limit:4 %}
+  {% for post in site.posts limit:10 %}
     {% include archive-single.html type="grid" %}
   {% endfor %}
 </div>
