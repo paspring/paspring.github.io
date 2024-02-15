@@ -1,10 +1,4 @@
 # main links
 main:
-  - title: "Portfolio"
-    url: /portfolio/
-  - title: "Continuous Learning"
-    url: /continuous-learning/
-  - title: "Blog"
-    url: "/blog/"
   - title: "About Me"
     url: "/about/"
