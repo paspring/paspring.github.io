@@ -4,6 +4,7 @@ title: "Introduction to LangChain: Unleashing the Power of Language Models in Yo
 date: 2024-02-13
 author_profile: true
 toc: true
+summary: Summary of the article
 header:
   teaser: /assets/images/posts/lang-chain-logo.jpg
 ---
