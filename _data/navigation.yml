@@ -1,7 +1,12 @@
 # main links
 main:
+  - title: "Portfolio"
+    url: "/portfolio/"
+  - title: "Blog"
+    url: "/blog/"
+  - title: "Resume"
+    url: "/resume/"
+  - title : "Contact"
+    url: "/contact/"
   - title: "About Me"
     url: "/about/"
-  - title: "Portfolio"
-  - title: "Blog"
-  - title: "Education"
