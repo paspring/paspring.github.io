@@ -4,9 +4,10 @@ title: Building My Jekyll Site with Docker and Minimal Mistakes
 date:   2024-01-28 05:31:45 +0000
 author_profile: true
 toc: true
+toc_sticky: true
 header:
   teaser: /assets/images/posts/jekyll-og.png
-summary: "See how I built my Jekyll site painlessly using Docker and Minimal Mistakes. This guide covers my setup process for easy replication."
+excerpt: "See how I built my Jekyll site painlessly using Docker and Minimal Mistakes. This guide covers my setup process for easy replication."
 ---
 In this post, I'd like to share the process I followed to build this website. These notes are primarily for personal reference, but if you're interested in recreating what I've done here, feel free to follow along.
 

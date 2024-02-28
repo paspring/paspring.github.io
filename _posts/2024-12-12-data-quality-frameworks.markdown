@@ -6,7 +6,7 @@ author_profile: true
 toc: true
 header:
   teaser: /assets/images/posts/2024-02-12-quality.jpeg
-summary: "Discover the critical frameworks that underpin enterprise data quality assurance. This post explores DAMA-DMBOK, TDQM, and DQMM methodologies with real business examples."
+excerpt: "Discover the critical frameworks that underpin enterprise data quality assurance. This post explores DAMA-DMBOK, TDQM, and DQMM methodologies with real business examples."
 ---
 In today's data-driven business landscape, the quality of data is not just a technical issue; it's a strategic asset that underpins organizational success. High-quality data supports accurate analytics, informed decision-making, and efficient operations. Conversely, poor data quality can lead to costly mistakes, lost opportunities, and diminished trust. Recognizing the critical role of data, organizations are increasingly adopting data quality frameworks to ensure their information meets the highest standards of accuracy, completeness, reliability, and relevance. This post delves deeper into the essence of these frameworks and showcases real business examples of their application.
 

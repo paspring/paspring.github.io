@@ -5,8 +5,9 @@ date:   2024-01-28 05:31:45 +0000
 author_profile: true
 toc: true 
 toc_sticky: true
-summary: "Welcome to my personal portfolio! I'm thrilled to have you here. This space is dedicated to showcasing my professional journey, my skills, and the projects that I am passionate about."
-
+excerpt: "Welcome to my personal portfolio! I'm thrilled to have you here. This space is dedicated to showcasing my professional journey, my skills, and the projects that I am passionate about."
+header:
+  teaser: /assets/images/posts/welcome.jpeg
 ---
 Welcome to my personal portfolio! I'm thrilled to have you here. This space is dedicated to showcasing my professional journey, my skills, and the projects that I am passionate about.
 
