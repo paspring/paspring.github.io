@@ -5,6 +5,8 @@ date: 2024-02-13
 excerpt: "Discover how LangChain is revolutionizing large language model integration. This innovative framework simplifies LLM application development."
 header:
   teaser: /assets/images/posts/lang-chain-logo.jpg
+toc: true
+toc_sticky: true
 ---
 In the rapidly evolving field of artificial intelligence, language models have emerged as powerful tools capable of understanding, generating, and interacting with human language in ways that were once thought to be the exclusive domain of human intelligence. One of the most exciting developments in this area is LangChain, a framework designed to democratize and streamline the integration of large language models (LLMs) into a wide array of applications. This blog post aims to introduce LangChain, explore its capabilities, and provide resources with links for those looking to delve deeper into this innovative framework.
 

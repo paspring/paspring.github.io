@@ -4,6 +4,7 @@ title: "Understanding Cloud Service Models: A Guide for Data Professionals"
 date:   2024-02-12 05:31:45 +0000
 author_profile: true
 toc: true
+toc_sticky: true
 excerpt: "Discover how IaaS, PaaS, and SaaS cloud models support data teams. This post explores principles and real examples from AWS and Databricks."
 header:
   teaser: /assets/images/posts/2024-02-12-IaaS-PaaS-SaaS.webp
