@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: single
 title: "Introduction to LangChain: Unleashing the Power of Language Models in Your Applications"
 date: 2024-02-13
 author_profile: true
