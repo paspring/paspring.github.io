@@ -4,7 +4,7 @@ title: "Introduction to LangChain: Unleashing the Power of Language Models in Yo
 date: 2024-02-13
 author_profile: true
 toc: true
-summary: Summary of the article
+summary: "Discover how LangChain is revolutionizing large language model integration. This innovative framework simplifies LLM application development."
 header:
   teaser: /assets/images/posts/lang-chain-logo.jpg
 ---
