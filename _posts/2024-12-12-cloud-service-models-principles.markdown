@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: posts
 title: "Understanding Cloud Service Models: A Guide for Data Professionals"
 date:   2024-02-12 05:31:45 +0000
 author_profile: true
