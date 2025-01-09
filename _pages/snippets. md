@@ -1,0 +1,97 @@
+import psycopg2
+import pandas as pd
+import json
+import logging
+
+# Configure logging
+logging.basicConfig(filename='db_connector.log', level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
+
+class PostgresConnector:
+    def __init__(self, config_file):
+        """
+        Initialize the PostgreSQL connection using a JSON config file.
+        """
+        self.config_file = config_file
+        self.conn = None
+        self.credentials = self._read_credentials()
+
+    def _read_credentials(self):
+        """
+        Read database credentials from a JSON file.
+        """
+        try:
+            with open(self.config_file, 'r') as file:
+                return json.load(file)
+        except Exception as e:
+            logging.error(f"Error reading the configuration file: {e}")
+            print(f"Error reading the configuration file: {e}")
+            return None
+
+    def connect(self):
+        """
+        Establish connection to PostgreSQL database using credentials from the JSON file.
+        """
+        if not self.credentials:
+            print("No valid credentials found. Check your JSON config file.")
+            return
+
+        try:
+            self.conn = psycopg2.connect(
+                host=self.credentials['host'],
+                port=self.credentials['port'],
+                dbname=self.credentials['dbname'],
+                user=self.credentials['user'],
+                password=self.credentials['password'],
+                options='-c statement_timeout=30000'  # 30-second timeout for queries
+            )
+            print("Connection successful!")
+        except Exception as e:
+            logging.error(f"Failed to connect to database: {e}")
+            print(f"Failed to connect to database: {e}")
+
+    def query(self, sql_query):
+        """
+        Execute a SQL query and return results as a pandas DataFrame.
+        """
+        if self.conn is None:
+            print("No connection established. Please call `connect()` first.")
+            return None
+
+        try:
+            df = pd.read_sql_query(sql_query, self.conn)
+            print("Query executed successfully!")
+            return df
+        except Exception as e:
+            logging.error(f"Failed to execute query: {e}")
+            print(f"Failed to execute query: {e}")
+            return None
+
+    def close(self):
+        """
+        Close the database connection.
+        """
+        if self.conn:
+            self.conn.close()
+            print("Connection closed.")
+
+    def __enter__(self):
+        """
+        Enable use with 'with' statement for automatic resource management.
+        """
+        self.connect()
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        """
+        Automatically close the connection when exiting 'with' block.
+        """
+        self.close()
+
+# Example usage:
+if __name__ == "__main__":
+    # Replace 'db_config.json' with the path to your configuration file
+    with PostgresConnector('db_config.json') as db:
+        query = "SELECT * FROM your_table_name LIMIT 10;"  # Example query
+        data = db.query(query)  # Run the query and get a DataFrame
+        if data is not None:
+            print(data)
