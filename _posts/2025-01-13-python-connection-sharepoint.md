@@ -1,154 +1,78 @@
-# **How to Read, Update, and Add Data to a SharePoint List Using Python**  
+# **How to Read, Update, and Add Data to a SharePoint List Using Python**
 
-If you need to interact with a **SharePoint list** programmatically using Python, the `Office365-REST-Python-Client` library makes this easy by supporting SharePoint Online. Below is a guide with example code snippets for **reading**, **updating**, and **adding** data to a SharePoint list using both **username/password authentication** and **client ID/client secret (OAuth)** for secure connections.
+Here’s a complete guide to programmatically interact with **SharePoint lists** using **Python**. This post covers how to connect to SharePoint, read data, add new list items, and update existing items using **pure Python** and **Snowflake Snowpark**.
 
 ---
 
-## **Step 1: Install Dependencies**  
+## **Step 1: Install Dependencies**
 
-To begin, install the required library using `pip`:  
-
+Before running the code, install the required libraries:
 ```bash
-pip install Office365-REST-Python-Client
+pip install Office365-REST-Python-Client snowflake-snowpark-python
 ```
 
 ---
 
 ## **Step 2: Authentication Options**
 
-You can authenticate using either **username/password** or **client ID/client secret** depending on your organization’s security setup.
+There are two ways to authenticate:
+1. **Username/Password Authentication**  
+2. **Client ID and Client Secret (OAuth with App Registration)**  
 
-### **Option 1: Username and Password**  
+### **Option 1: Username/Password Authentication (Basic Authentication)**
 
-This option uses your SharePoint login credentials.  
-
+This option uses your SharePoint login credentials:
 ```python
-from office365.sharepoint.client_context import ClientContext
 from office365.runtime.auth.user_credential import UserCredential
 
-# SharePoint site and credentials
-site_url = "https://yourcompany.sharepoint.com/sites/yoursite"
-username = "your_email@yourcompany.com"
-password = "your_password"
-list_name = "Your List Name"
-
-# Create connection
 ctx = ClientContext(site_url).with_credentials(UserCredential(username, password))
 ```
 
-### **Option 2: Client ID and Client Secret (OAuth)**  
+### **Option 2: Client ID and Client Secret (OAuth Authentication)**
 
-This option uses **app registration credentials** (client ID and secret) to authenticate.  
-
+This option uses app registration credentials from **Azure Active Directory**:
 ```python
-from office365.sharepoint.client_context import ClientContext
 from office365.runtime.auth.client_credential import ClientCredential
 
-# SharePoint site and client credentials
-site_url = "https://yourcompany.sharepoint.com/sites/yoursite"
-client_id = "your_client_id"
-client_secret = "your_client_secret"
-list_name = "Your List Name"
-
-# Create connection
 ctx = ClientContext(site_url).with_credentials(ClientCredential(client_id, client_secret))
 ```
 
 ---
 
-## **Step 3: Read Items from the SharePoint List**  
+## **Step 3: Pure Python Script for SharePoint Operations**
 
-This function retrieves and prints all items from the SharePoint list:  
-
-```python
-def read_sharepoint_list():
-    try:
-        sharepoint_list = ctx.web.lists.get_by_title(list_name)
-        items = sharepoint_list.items.get().execute_query()
-
-        print("SharePoint List Items:")
-        for item in items:
-            print(f"ID: {item.properties['Id']}, Title: {item.properties['Title']}")
-    except Exception as e:
-        print(f"Error reading SharePoint list: {e}")
-```
-
----
-
-## **Step 4: Add an Item to the SharePoint List**  
-
-This function adds a new item to the SharePoint list:  
+This script can be run locally from a terminal to **read**, **add**, or **update** SharePoint list data:
 
 ```python
-def add_sharepoint_list_item():
-    try:
-        sharepoint_list = ctx.web.lists.get_by_title(list_name)
-        new_item = {
-            "Title": "New Item Title",
-            "Status": "Pending"
-        }
-        item = sharepoint_list.add_item(new_item).execute_query()
-        print(f"Added new item with ID: {item.properties['Id']}")
-    except Exception as e:
-        print(f"Error adding item to SharePoint list: {e}")
-```
-
----
-
-## **Step 5: Update an Item in the SharePoint List**  
-
-This function updates the `Title` field of an item based on its ID:  
-
-```python
-def update_sharepoint_list_item(item_id, new_title):
-    try:
-        sharepoint_list = ctx.web.lists.get_by_title(list_name)
-        list_item = sharepoint_list.get_item_by_id(item_id)
-        list_item.set_property('Title', new_title)
-        list_item.update()
-        ctx.execute_query()
-        print(f"List item with ID {item_id} updated successfully.")
-    except Exception as e:
-        print(f"Error updating SharePoint list item: {e}")
-```
-
----
-
-## **Full Python Script Example**
-
-Below is a script that supports **read**, **add**, and **update** operations and allows you to pass the action type (`read`, `add`, or `update`) when running the script.
-
-```python
-import sys
 from office365.sharepoint.client_context import ClientContext
 from office365.runtime.auth.client_credential import ClientCredential
 from office365.runtime.auth.user_credential import UserCredential
 import os
+import sys
 
-# SharePoint site and credentials
+# SharePoint site and list details
 site_url = "https://yourcompany.sharepoint.com/sites/yoursite"
 list_name = "Your List Name"
 
-# Uncomment one of the following for authentication:
-# Option 1: Username and Password
+# Environment variables for security
 username = os.getenv('SHAREPOINT_USER', "your_email@yourcompany.com")
 password = os.getenv('SHAREPOINT_PASS', "your_password")
-ctx = ClientContext(site_url).with_credentials(UserCredential(username, password))
-
-# Option 2: Client ID and Client Secret
-# client_id = os.getenv('CLIENT_ID', "your_client_id")
-# client_secret = os.getenv('CLIENT_SECRET', "your_client_secret")
-# ctx = ClientContext(site_url).with_credentials(ClientCredential(client_id, client_secret))
+client_id = os.getenv('CLIENT_ID', "your_client_id")
+client_secret = os.getenv('CLIENT_SECRET', "your_client_secret")
 
 
-def read_sharepoint_list():
+def read_sharepoint_list(ctx):
     sharepoint_list = ctx.web.lists.get_by_title(list_name)
     items = sharepoint_list.items.get().execute_query()
-    print("SharePoint List Items:")
-    for item in items:
-        print(f"ID: {item.properties['Id']}, Title: {item.properties['Title']}")
 
-def add_sharepoint_list_item():
+    results = []
+    for item in items:
+        results.append({"ID": item.properties["Id"], "Title": item.properties["Title"]})
+        print(f"ID: {item.properties['Id']}, Title: {item.properties['Title']}")
+    return results
+
+
+def add_sharepoint_list_item(ctx):
     sharepoint_list = ctx.web.lists.get_by_title(list_name)
     new_item = {
         "Title": "New Item Title",
@@ -157,7 +81,8 @@ def add_sharepoint_list_item():
     item = sharepoint_list.add_item(new_item).execute_query()
     print(f"Added new item with ID: {item.properties['Id']}")
 
-def update_sharepoint_list_item(item_id, new_title):
+
+def update_sharepoint_list_item(ctx, item_id, new_title):
     sharepoint_list = ctx.web.lists.get_by_title(list_name)
     list_item = sharepoint_list.get_item_by_id(item_id)
     list_item.set_property('Title', new_title)
@@ -165,65 +90,171 @@ def update_sharepoint_list_item(item_id, new_title):
     ctx.execute_query()
     print(f"List item with ID {item_id} updated successfully.")
 
-if __name__ == "__main__":
-    action = sys.argv[1] if len(sys.argv) > 1 else "read"
+
+def main():
+    # Choose authentication type (user_credential or client_credential)
+    auth_type = os.getenv("AUTH_TYPE", "user_credential").lower()
+
+    if auth_type == "client_credential":
+        ctx = ClientContext(site_url).with_credentials(ClientCredential(client_id, client_secret))
+    else:
+        ctx = ClientContext(site_url).with_credentials(UserCredential(username, password))
+
+    # Perform action based on user input
+    action = os.getenv("ACTION", "read").lower()
 
     if action == "read":
-        read_sharepoint_list()
+        read_sharepoint_list(ctx)
     elif action == "add":
-        add_sharepoint_list_item()
+        add_sharepoint_list_item(ctx)
     elif action == "update":
-        if len(sys.argv) < 4:
-            print("Usage for update: python sharepoint_script.py update <item_id> <new_title>")
-        else:
-            item_id = int(sys.argv[2])
-            new_title = sys.argv[3]
-            update_sharepoint_list_item(item_id, new_title)
+        item_id = int(os.getenv("ITEM_ID", 1))
+        new_title = os.getenv("NEW_TITLE", "Updated Title")
+        update_sharepoint_list_item(ctx, item_id, new_title)
     else:
-        print("Unknown action. Please use 'read', 'add', or 'update'.")
+        print(f"Unknown action: {action}")
+
+
+if __name__ == "__main__":
+    main()
 ```
 
 ---
 
-## **How to Run the Script:**
+## **Run the Pure Python Script**
 
 - **Read SharePoint List:**
   ```bash
-  python sharepoint_script.py read
+  export ACTION="read"
+  python sharepoint_script.py
   ```
-- **Add a New Item:**
+- **Add New Item:**
   ```bash
-  python sharepoint_script.py add
+  export ACTION="add"
+  python sharepoint_script.py
   ```
 - **Update an Item:**
   ```bash
-  python sharepoint_script.py update 1 "Updated Title"
+  export ACTION="update"
+  export ITEM_ID=5
+  export NEW_TITLE="Updated Item Title"
+  python sharepoint_script.py
   ```
 
 ---
 
-## **Security Tip:**  
-- Avoid hardcoding sensitive information. Use **environment variables** instead:  
+## **Step 4: Snowflake Snowpark-Compatible Python Script**
 
-**Example for setting environment variables:**
-```bash
-export SHAREPOINT_USER="your_email@yourcompany.com"
-export SHAREPOINT_PASS="your_password"
-export CLIENT_ID="your_client_id"
-export CLIENT_SECRET="your_client_secret"
-```
+If you want to run the same script inside **Snowflake Snowpark**, update the script as follows:
 
-In Python:
 ```python
+from office365.sharepoint.client_context import ClientContext
+from office365.runtime.auth.client_credential import ClientCredential
+from office365.runtime.auth.user_credential import UserCredential
+from snowflake.snowpark import Session
 import os
-username = os.getenv('SHAREPOINT_USER')
-password = os.getenv('SHAREPOINT_PASS')
-client_id = os.getenv('CLIENT_ID')
-client_secret = os.getenv('CLIENT_SECRET')
+
+# SharePoint site and list details
+site_url = "https://yourcompany.sharepoint.com/sites/yoursite"
+list_name = "Your List Name"
+
+# Environment variables for security
+username = os.getenv('SHAREPOINT_USER', "your_email@yourcompany.com")
+password = os.getenv('SHAREPOINT_PASS', "your_password")
+client_id = os.getenv('CLIENT_ID', "your_client_id")
+client_secret = os.getenv('CLIENT_SECRET', "your_client_secret")
+
+
+def read_sharepoint_list(ctx):
+    sharepoint_list = ctx.web.lists.get_by_title(list_name)
+    items = sharepoint_list.items.get().execute_query()
+
+    results = []
+    for item in items:
+        results.append({"ID": item.properties["Id"], "Title": item.properties["Title"]})
+        print(f"ID: {item.properties['Id']}, Title: {item.properties['Title']}")
+    return results
+
+
+def add_sharepoint_list_item(ctx):
+    sharepoint_list = ctx.web.lists.get_by_title(list_name)
+    new_item = {
+        "Title": "New Item Title",
+        "Status": "Pending"
+    }
+    item = sharepoint_list.add_item(new_item).execute_query()
+    print(f"Added new item with ID: {item.properties['Id']}")
+
+
+def update_sharepoint_list_item(ctx, item_id, new_title):
+    sharepoint_list = ctx.web.lists.get_by_title(list_name)
+    list_item = sharepoint_list.get_item_by_id(item_id)
+    list_item.set_property('Title', new_title)
+    list_item.update()
+    ctx.execute_query()
+    print(f"List item with ID {item_id} updated successfully.")
+
+
+def main(session: Session):
+    auth_type = os.getenv("AUTH_TYPE", "user_credential").lower()
+
+    if auth_type == "client_credential":
+        ctx = ClientContext(site_url).with_credentials(ClientCredential(client_id, client_secret))
+    else:
+        ctx = ClientContext(site_url).with_credentials(UserCredential(username, password))
+
+    action = os.getenv("ACTION", "read").lower()
+
+    if action == "read":
+        result = read_sharepoint_list(ctx)
+        # Optional: Save SharePoint data in Snowflake table
+        df = session.create_dataframe(result)
+        df.write.mode("overwrite").save_as_table("sharepoint_list_data")
+    elif action == "add":
+        add_sharepoint_list_item(ctx)
+    elif action == "update":
+        item_id = int(os.getenv("ITEM_ID", 1))
+        new_title = os.getenv("NEW_TITLE", "Updated Title")
+        update_sharepoint_list_item(ctx, item_id, new_title)
+    else:
+        raise ValueError(f"Unknown action: {action}")
+
+    print("Operation completed successfully.")
 ```
 
 ---
 
-This guide demonstrates how to efficiently interact with SharePoint lists using Python. Whether you need to read, update, or add new items, you can choose the appropriate authentication method and customize the snippets to fit your needs.
+## **Run in Snowflake**
 
-Let me know if you have any questions or need help troubleshooting!
+After deploying your Python function to Snowflake:
+- **Read SharePoint Data:**
+  ```sql
+  CALL my_sharepoint_handler();
+  ```
+- **Add a New Item:**
+  ```bash
+  export ACTION="add"
+  python sharepoint_script.py
+  ```
+- **Update an Item:**
+  ```bash
+  export ACTION="update"
+  export ITEM_ID=10
+  export NEW_TITLE="Updated SharePoint Item"
+  python sharepoint_script.py
+  ```
+
+---
+
+## **Security Tips:**
+- **Avoid hardcoding credentials:** Use environment variables for security:
+  ```bash
+  export SHAREPOINT_USER="your_email@yourcompany.com"
+  export SHAREPOINT_PASS="your_password"
+  export CLIENT_ID="your_client_id"
+  export CLIENT_SECRET="your_client_secret"
+  ```
+
+---
+
+With this post, you now have **all the options** to interact with SharePoint lists using **Python**, whether locally or within **Snowflake Snowpark**! Let me know if you need help setting up your environment or debugging any issues!
