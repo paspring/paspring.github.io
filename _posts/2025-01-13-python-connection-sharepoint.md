@@ -1,12 +1,12 @@
-# **How to Read, Update, and Add Data to a SharePoint List Using Python**
+# **How to Read, Update, and Add Data to a SharePoint List Using Python**  
 
-If you need to interact with a **SharePoint list** programmatically using Python, the `Office365-REST-Python-Client` library makes this easy by supporting SharePoint Online. Here's a step-by-step guide with example code snippets for reading, updating, and adding data to a SharePoint list.
+If you need to interact with a **SharePoint list** programmatically using Python, the `Office365-REST-Python-Client` library makes this easy by supporting SharePoint Online. Below is a guide with example code snippets for **reading**, **updating**, and **adding** data to a SharePoint list using both **username/password authentication** and **client ID/client secret (OAuth)** for secure connections.
 
 ---
 
-## **Step 1: Install Dependencies**
+## **Step 1: Install Dependencies**  
 
-To begin, install the required library using `pip`:
+To begin, install the required library using `pip`:  
 
 ```bash
 pip install Office365-REST-Python-Client
@@ -14,9 +14,13 @@ pip install Office365-REST-Python-Client
 
 ---
 
-## **Step 2: Connect to SharePoint**
+## **Step 2: Authentication Options**
 
-You can authenticate using your **username and password** or **client credentials**. Below is an example for basic username/password authentication:
+You can authenticate using either **username/password** or **client ID/client secret** depending on your organization’s security setup.
+
+### **Option 1: Username and Password**  
+
+This option uses your SharePoint login credentials.  
 
 ```python
 from office365.sharepoint.client_context import ClientContext
@@ -32,11 +36,29 @@ list_name = "Your List Name"
 ctx = ClientContext(site_url).with_credentials(UserCredential(username, password))
 ```
 
+### **Option 2: Client ID and Client Secret (OAuth)**  
+
+This option uses **app registration credentials** (client ID and secret) to authenticate.  
+
+```python
+from office365.sharepoint.client_context import ClientContext
+from office365.runtime.auth.client_credential import ClientCredential
+
+# SharePoint site and client credentials
+site_url = "https://yourcompany.sharepoint.com/sites/yoursite"
+client_id = "your_client_id"
+client_secret = "your_client_secret"
+list_name = "Your List Name"
+
+# Create connection
+ctx = ClientContext(site_url).with_credentials(ClientCredential(client_id, client_secret))
+```
+
 ---
 
-## **Step 3: Read Items from the SharePoint List**
+## **Step 3: Read Items from the SharePoint List**  
 
-To read all items from a SharePoint list:
+This function retrieves and prints all items from the SharePoint list:  
 
 ```python
 def read_sharepoint_list():
@@ -53,9 +75,9 @@ def read_sharepoint_list():
 
 ---
 
-## **Step 4: Add an Item to the SharePoint List**
+## **Step 4: Add an Item to the SharePoint List**  
 
-To add a new item to the SharePoint list:
+This function adds a new item to the SharePoint list:  
 
 ```python
 def add_sharepoint_list_item():
@@ -73,9 +95,9 @@ def add_sharepoint_list_item():
 
 ---
 
-## **Step 5: Update an Item in the SharePoint List**
+## **Step 5: Update an Item in the SharePoint List**  
 
-To update a specific item in the SharePoint list:
+This function updates the `Title` field of an item based on its ID:  
 
 ```python
 def update_sharepoint_list_item(item_id, new_title):
@@ -92,25 +114,34 @@ def update_sharepoint_list_item(item_id, new_title):
 
 ---
 
-## **Step 6: Run as a Python Script**
+## **Full Python Script Example**
 
-Here's a complete example that can be run as a `.py` file:
-
-### **Full Code:**
+Below is a script that supports **read**, **add**, and **update** operations and allows you to pass the action type (`read`, `add`, or `update`) when running the script.
 
 ```python
 import sys
 from office365.sharepoint.client_context import ClientContext
+from office365.runtime.auth.client_credential import ClientCredential
 from office365.runtime.auth.user_credential import UserCredential
+import os
 
 # SharePoint site and credentials
 site_url = "https://yourcompany.sharepoint.com/sites/yoursite"
-username = "your_email@yourcompany.com"
-password = "your_password"
 list_name = "Your List Name"
 
+# Uncomment one of the following for authentication:
+# Option 1: Username and Password
+username = os.getenv('SHAREPOINT_USER', "your_email@yourcompany.com")
+password = os.getenv('SHAREPOINT_PASS', "your_password")
+ctx = ClientContext(site_url).with_credentials(UserCredential(username, password))
+
+# Option 2: Client ID and Client Secret
+# client_id = os.getenv('CLIENT_ID', "your_client_id")
+# client_secret = os.getenv('CLIENT_SECRET', "your_client_secret")
+# ctx = ClientContext(site_url).with_credentials(ClientCredential(client_id, client_secret))
+
+
 def read_sharepoint_list():
-    ctx = ClientContext(site_url).with_credentials(UserCredential(username, password))
     sharepoint_list = ctx.web.lists.get_by_title(list_name)
     items = sharepoint_list.items.get().execute_query()
     print("SharePoint List Items:")
@@ -118,7 +149,6 @@ def read_sharepoint_list():
         print(f"ID: {item.properties['Id']}, Title: {item.properties['Title']}")
 
 def add_sharepoint_list_item():
-    ctx = ClientContext(site_url).with_credentials(UserCredential(username, password))
     sharepoint_list = ctx.web.lists.get_by_title(list_name)
     new_item = {
         "Title": "New Item Title",
@@ -128,7 +158,6 @@ def add_sharepoint_list_item():
     print(f"Added new item with ID: {item.properties['Id']}")
 
 def update_sharepoint_list_item(item_id, new_title):
-    ctx = ClientContext(site_url).with_credentials(UserCredential(username, password))
     sharepoint_list = ctx.web.lists.get_by_title(list_name)
     list_item = sharepoint_list.get_item_by_id(item_id)
     list_item.set_property('Title', new_title)
@@ -154,17 +183,19 @@ if __name__ == "__main__":
         print("Unknown action. Please use 'read', 'add', or 'update'.")
 ```
 
-### **How to Run:**
+---
 
-- **Read list:**
+## **How to Run the Script:**
+
+- **Read SharePoint List:**
   ```bash
   python sharepoint_script.py read
   ```
-- **Add new item:**
+- **Add a New Item:**
   ```bash
   python sharepoint_script.py add
   ```
-- **Update an item:**
+- **Update an Item:**
   ```bash
   python sharepoint_script.py update 1 "Updated Title"
   ```
@@ -172,20 +203,27 @@ if __name__ == "__main__":
 ---
 
 ## **Security Tip:**  
-Avoid hardcoding credentials. Use **environment variables**:
+- Avoid hardcoding sensitive information. Use **environment variables** instead:  
+
+**Example for setting environment variables:**
 ```bash
 export SHAREPOINT_USER="your_email@yourcompany.com"
 export SHAREPOINT_PASS="your_password"
+export CLIENT_ID="your_client_id"
+export CLIENT_SECRET="your_client_secret"
 ```
-In your Python code:
+
+In Python:
 ```python
 import os
 username = os.getenv('SHAREPOINT_USER')
 password = os.getenv('SHAREPOINT_PASS')
+client_id = os.getenv('CLIENT_ID')
+client_secret = os.getenv('CLIENT_SECRET')
 ```
 
 ---
 
-This guide shows how to efficiently interact with SharePoint lists using Python. Whether you want to read, update, or add new items, you can customize these snippets to fit your use case.
+This guide demonstrates how to efficiently interact with SharePoint lists using Python. Whether you need to read, update, or add new items, you can choose the appropriate authentication method and customize the snippets to fit your needs.
 
 Let me know if you have any questions or need help troubleshooting!
