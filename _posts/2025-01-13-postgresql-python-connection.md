@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Connecting to PostgreSQL Using Python: A Comprehensive Guide
+title: Connecting to PostgreSQL Using Python - A Comprehensive Guide
 date:   2025-01-15 05:31:45 +0000
 author_profile: true
 toc: true
