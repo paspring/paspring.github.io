@@ -10,8 +10,6 @@ header:
 excerpt: "Here’s a complete guide to programmatically interact with **SharePoint lists** using **Python**."
 ---
 
-# **How to Read, Update, and Add Data to a SharePoint List Using Python**
-
 Here’s a complete guide to programmatically interact with **SharePoint lists** using **Python**. This post covers how to connect to SharePoint, read data, add new list items, and update existing items using **pure Python** and **Snowflake Snowpark**.
 
 ---
