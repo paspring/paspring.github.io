@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 header:
   teaser: /assets/images/posts/python_postgresql.png
-excerpt: "Learn how to seamlessly connecto to PostgreSQL using Python and psycopg2 library. This guide covers the essentials for setting up a secure and efficient database connection."
+excerpt: "Learn how to seamlessly connecto to PostgreSQL using Python and psycopg2 library. This guide covers the essentials for setting up a secure and efficient database connection"
 ---
 
 ### **🔗 Connecting to PostgreSQL Using Python: A Comprehensive Guide** 🐘⚙️
