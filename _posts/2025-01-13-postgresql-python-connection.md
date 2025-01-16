@@ -9,9 +9,6 @@ header:
   teaser: /assets/images/posts/python_postgresql.png
 excerpt: "Learn how to seamlessly connecto to PostgreSQL using Python and psycopg2 library. This guide covers the essentials for setting up a secure and efficient database connection"
 ---
-
-### **Connecting to PostgreSQL Using Python: A Comprehensive Guide** 
-
 If you're working with PostgreSQL databases in your projects, handling connections efficiently and securely is essential. Here’s a step-by-step breakdown of a Python class that **reads credentials from a JSON file** and **returns SQL query results as a pandas DataFrame**.
 
 ---
