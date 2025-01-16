@@ -1,13 +1,13 @@
 ---
 layout: single
 title: How to Read, Update, and Add Data to a SharePoint List Using Python
-date:   2024-01-28 05:31:45 +0000
+date:   2025-01-16 05:31:45 +0000
 author_profile: true
 toc: true
 toc_sticky: true
 header:
-  teaser: /assets/images/posts/jekyll-og.png
-excerpt: "See how I built my Jekyll site painlessly using Docker and Minimal Mistakes. This guide covers my setup process for easy replication."
+  teaser: /assets/images/posts/python_sharepoint.png
+excerpt: "Here’s a complete guide to programmatically interact with **SharePoint lists** using **Python**."
 ---
 
 # **How to Read, Update, and Add Data to a SharePoint List Using Python**
