@@ -60,11 +60,7 @@ author:
   avatar: "/assets/images/profiles.jpeg"
   bio: "Senior Data Analyst 
   <br>
-  Data Scientist
-  <br>
-  10 Years of Experience 
-  <br>
-  (3 Years in the USA)" # Note: Markdown is allowed
+  10+ Years of Experience" # Note: Markdown is allowed
   location: "Jersey City, NJ"
   links:
     - label: "Linkedin"
