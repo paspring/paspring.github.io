@@ -10,11 +10,6 @@ header:
 excerpt: "Build an Excel-like grid in PowerApps! Supports CRUD, undo, sorting/filtering, and batch updates to SharePoint—no code. Modern controls for seamless data editing."
 ---
 
- 
-**Including Sample SharePoint Data Table & Advanced Context**  
-
----
-
 ## **1. Introduction & Use Case**  
 **Why Build an Editable Grid?**  
 - **Scenario:** Imagine managing a student tracking system where teachers need to update grades, subjects, attendance, and student details in real time.  
