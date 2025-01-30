@@ -10,7 +10,6 @@ header:
 excerpt: "SharePoint is a powerful platform for collaboration and data management, and automating tasks like creating lists, renaming them, and adding columns can save a lot of time and effort"
 ---
 
-
 SharePoint is a powerful platform for collaboration and data management, and automating tasks like creating lists, renaming them, and adding columns can save a lot of time and effort. In this blog post, we'll walk through how to create SharePoint lists programmatically using Python while adhering to the **Single Responsibility Principle (SRP)** for clean and maintainable code. Additionally, we'll explore how to rename an existing list programmatically.
 
 ---
@@ -43,11 +42,10 @@ pip install Office365-REST-Python-Client
 
 We'll divide the workflow into these steps:
 
-1. **Authenticate with SharePoint**: Connect to the SharePoint site using credentials.
-2. **Create the SharePoint List**: Programmatically create a list with a specific template.
-3. **Add Columns to the List**: Configure and add columns dynamically using a dictionary.
-4. **Rename an Existing List**: Update the title of an existing SharePoint list programmatically.
-5. **Combine the Steps**: Orchestrate the entire process into a clean, reusable workflow.
+1. **Create the SharePoint List**: Programmatically create a list with a specific template.
+2. **Add Columns to the List**: Configure and add columns dynamically using a dictionary.
+3. **Rename an Existing List**: Update the title of an existing SharePoint list programmatically.
+4. **Combine the Steps**: Orchestrate the entire process into a clean, reusable workflow.
 
 ---
 
@@ -55,33 +53,9 @@ We'll divide the workflow into these steps:
 
 Below is the complete implementation. Each function is designed to handle a specific task, ensuring clean and maintainable code.
 
-### Step 1: Authenticate with SharePoint
-
-The `authenticate_sharepoint` function connects to your SharePoint site using your tenant's **client ID** and **client secret**.
-
-```python
-from office365.runtime.auth.client_credential import ClientCredential
-from office365.sharepoint.client_context import ClientContext
-
-def authenticate_sharepoint(site_url, client_id, client_secret):
-    """
-    Authenticate and return the SharePoint client context.
-    Args:
-        site_url (str): SharePoint site URL.
-        client_id (str): Client ID for authentication.
-        client_secret (str): Client secret for authentication.
-
-    Returns:
-        ClientContext: Authenticated client context.
-    """
-    credentials = ClientCredential(client_id, client_secret)
-    ctx = ClientContext(site_url).with_credentials(credentials)
-    return ctx
-```
-
 ---
 
-### Step 2: Create the SharePoint List
+### Step 1: Create the SharePoint List
 
 The `create_sharepoint_list` function creates a new list using the **ListTemplateType.GenericList** template.
 
@@ -113,11 +87,13 @@ def create_sharepoint_list(ctx, list_title, list_description, list_template=List
 
 ---
 
-### Step 3: Add Columns Dynamically
+### Step 2: Add Columns Dynamically
 
 The `configure_columns` function takes a configuration dictionary to define and add columns dynamically.
 
 ```python
+from office365.sharepoint.fields.field_creation_information import FieldCreationInformation
+
 def configure_columns(target_list, columns_config):
     """
     Add columns to the SharePoint list based on the configuration.
@@ -126,36 +102,34 @@ def configure_columns(target_list, columns_config):
         columns_config (list): List of dictionaries defining column configurations.
     """
     for column in columns_config:
-        column_type = column.get("type")
+        field_info = FieldCreationInformation()
+        field_info.display_name = column["name"]
+        field_info.internal_name = column["name"]
 
-        if column_type == "text":
-            target_list.fields.add_text(column["name"], required=column.get("required", False))
-        elif column_type == "number":
-            target_list.fields.add_number(column["name"], required=column.get("required", False))
-        elif column_type == "choice":
-            target_list.fields.add_choice(
-                column["name"],
-                choices=column.get("choices", []),
-                required=column.get("required", False),
-                default_value=column.get("default_value"),
-            )
-        elif column_type == "datetime":
-            target_list.fields.add_datetime(
-                column["name"],
-                required=column.get("required", False),
-                display_format=column.get("display_format", "DateOnly"),
-            )
+        if column["type"] == "text":
+            field_info.field_type_kind = 2  # Text field
+        elif column["type"] == "number":
+            field_info.field_type_kind = 9  # Number field
+        elif column["type"] == "choice":
+            field_info.field_type_kind = 6  # Choice field
+            field_info.choices = column.get("choices", [])
+            field_info.default_value = column.get("default_value")
+        elif column["type"] == "datetime":
+            field_info.field_type_kind = 4  # DateTime field
+            field_info.display_format = column.get("display_format", 0)  # 0 = DateOnly, 1 = DateTime
         else:
-            print(f"Unsupported column type: {column_type}")
-        
-        # Execute after adding each column
+            print(f"Unsupported column type: {column['type']}")
+            continue
+
+        # Add the field to the list
+        target_list.fields.add(field_info)
         target_list.context.execute_query()
         print(f"Column '{column['name']}' added successfully!")
 ```
 
 ---
 
-### Step 4: Rename an Existing List
+### Step 3: Rename an Existing List
 
 The `rename_sharepoint_list` function renames an existing list by updating its `Title` property.
 
@@ -183,29 +157,24 @@ def rename_sharepoint_list(ctx, current_title, new_title):
 
 ---
 
-### Step 5: Combine Everything
+### Step 4: Combine Everything
 
-The `create_list_with_columns` function orchestrates the workflow, combining authentication, list creation, column configuration, and renaming if necessary.
+The `create_list_with_columns` function orchestrates the workflow, combining list creation, column configuration, and renaming if necessary.
 
 ```python
-def create_list_with_columns(site_url, client_id, client_secret, list_title, list_description, columns_config):
+def create_list_with_columns(ctx, list_title, list_description, columns_config):
     """
     Orchestrates the creation of a SharePoint list and adding columns to it.
     Args:
-        site_url (str): SharePoint site URL.
-        client_id (str): Client ID for authentication.
-        client_secret (str): Client secret for authentication.
+        ctx (ClientContext): Authenticated SharePoint client context.
         list_title (str): Title of the list.
         list_description (str): Description of the list.
         columns_config (list): List of dictionaries defining column configurations.
     """
-    # Step 1: Authenticate
-    ctx = authenticate_sharepoint(site_url, client_id, client_secret)
-
-    # Step 2: Create the list
+    # Step 1: Create the list
     new_list = create_sharepoint_list(ctx, list_title, list_description)
 
-    # Step 3: Add columns to the list
+    # Step 2: Add columns to the list
     configure_columns(new_list, columns_config)
 
     print(f"List '{list_title}' with columns configured successfully!")
@@ -230,25 +199,23 @@ if __name__ == "__main__":
 
     # Column configuration
     columns_config = [
-        {"name": "TextColumn", "type": "text", "required": False},
-        {"name": "NumberColumn", "type": "number", "required": True},
+        {"name": "TextColumn", "type": "text"},
+        {"name": "NumberColumn", "type": "number"},
         {
             "name": "ChoiceColumn",
             "type": "choice",
             "choices": ["Option 1", "Option 2", "Option 3"],
-            "required": False,
             "default_value": "Option 1",
         },
-        {"name": "DateColumn", "type": "datetime", "required": False, "display_format": "DateOnly"},
+        {"name": "DateColumn", "type": "datetime", "display_format": 0},  # 0 = DateOnly
     ]
 
+    # Authenticate (assuming ctx is already created)
+    ctx = authenticate_sharepoint(site_url, client_id, client_secret)
+
     # Create the list with columns
-    create_list_with_columns(site_url, client_id, client_secret, list_title, list_description, columns_config)
-```
+    create_list_with_columns(ctx, list_title, list_description, columns_config)
 
-### Rename an Existing List
-
-```python
     # Rename the existing list
     current_title = "My Programmatic List"
     new_title = "Renamed List"
