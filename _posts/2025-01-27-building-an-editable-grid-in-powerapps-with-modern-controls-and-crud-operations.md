@@ -10,234 +10,148 @@ header:
 excerpt: "Build an Excel-like grid in PowerApps! Supports CRUD, undo, sorting/filtering, and batch updates to SharePoint—no code. Modern controls for seamless data editing."
 ---
 
-## **1. Introduction & Use Case**  
-**Why Build an Editable Grid?**  
-- **Scenario:** Imagine managing a student tracking system where teachers need to update grades, subjects, attendance, and student details in real time.  
-- **Problem:** Manual data entry in SharePoint lists is time-consuming and error-prone.  
-- **Solution:** A PowerApps grid that mimics Excel-like editing, with bulk updates, sorting, filtering, and undo functionality.  
-
-**Key Features We’ll Build:**  
-- 📝 **Inline Editing** (Edit any cell directly).  
-- 💾 **Bulk Save** (Save all changes to SharePoint in one click).  
-- ↩️ **Undo Changes** (Revert edits before saving).  
-- ➕ **Add/Delete Records** (Create or remove student entries).  
-- 🔍 **Dynamic Filtering** (Filter by subject or grade).  
-- 🚀 **Performance** (Optimized for large datasets).  
+This guide walks through how to build a **fully functional, editable grid** in PowerApps that integrates with **SharePoint**. The grid will support **CRUD operations** (Create, Read, Update, Delete), **undo functionality**, **sorting**, **filtering**, and **batch updates**. The approach ensures that only modified records are tracked, preventing unnecessary updates when refreshing or saving.
 
 ---
 
-## **2. Sample SharePoint Data Structure**  
-**List Name:** **`Student Tracker`**  
-
-| **Column Name**      | **Type**          | **Required?** | **Sample Data**                | **Notes**                             |  
-|-----------------------|-------------------|---------------|---------------------------------|---------------------------------------|  
-| **Title**             | Single line text  | Yes           | "John", "Maria"                | Renamed to "First Name" in SharePoint|  
-| **Last Name**         | Single line text  | Yes           | "Doe", "Smith"                 |                                       |  
-| **Subject**           | Choice            | No            | "Math", "Science", "English"   | Choices: Predefined list of subjects  |  
-| **Grade**             | Lookup            | No            | "A", "B", "C"                  | Looks up to a "Grades" list           |  
-| **Reported Date**     | Date              | Yes           | "2023-10-15"                   |                                       |  
-| **Active**            | Yes/No            | No            | "Yes"                          | Checkbox for active/inactive status   |  
-
-**Notes:**  
-- **Grade Lookup List:** A separate SharePoint list named **`Grades`** with columns `Grade (Text)` and `Value (Number)`.  
-- **Default Values:** Use SharePoint’s column settings to set defaults (e.g., `Active = Yes`).  
+## **What You’ll Learn**
+By the end of this tutorial, you’ll be able to:
+1. Connect PowerApps to a **SharePoint list**.
+2. Build an **editable grid** using PowerApps galleries.
+3. Implement **CRUD operations** efficiently.
+4. Track and manage changes using a **collection**.
+5. Enable **sorting** and **filtering** without interfering with data tracking.
+6. Prevent duplicate updates when refreshing or saving changes.
+7. Disable **Save** and **Reset** buttons when no changes are made.
 
 ---
 
-## **3. Step-by-Step Implementation**  
-
-### **Step 1: Connect to SharePoint Data**  
-1. **Create a Connection:**  
-   - Go to **Data** > **Add Data** > **SharePoint**.  
-   - Enter your SharePoint site URL and connect to the **`Student Tracker`** list.  
-   - Verify columns match the sample table above.  
-
-2. **Add the Grades Lookup List (Optional):**  
-   - If using a lookup column for grades, connect to the **`Grades`** list.  
+## **Step 1: Create a Blank Canvas App**
+1. Open **PowerApps** and create a **blank canvas app**.
+2. Choose the **tablet form factor** or any preferred form factor.
+3. Name the app and click **Create**.
 
 ---
 
-### **Step 2: Enable Modern Controls**  
-1. **Activate Preview Features:**  
-   - Go to **Settings** > **Upcoming Features** > **Preview**.  
-   - Enable **Modern controls and themes**.  
+## **Step 2: Connect to a SharePoint List**
+1. Go to the **Data Sources** pane and click **Add Data**.
+2. Search for and select the **SharePoint** connector.
+3. Connect to the **SharePoint site** by entering the site URL.
+4. Select the **SharePoint list** to use (e.g., `StudentTracker`).
+5. Click **Connect**.
 
 ---
 
-### **Step 3: Build the Grid Layout**  
-1. **Insert a Modern Gallery:**  
-   - Go to **Insert** > **Layout** > **Blank Vertical Gallery**.  
-   - Set **Items** to `Student Tracker`.  
-
-2. **Adjust Gallery Properties:**  
-   - **TemplatePadding**: `0` (Removes spacing between rows).  
-   - **TemplateHeight**: `60` (Compact row height).  
-
-3. **Add Controls to the Gallery Template:**  
-   - **First Name:** Modern Text Input (`txtFirstName`, bind to `ThisItem.Title`).  
-   - **Last Name:** Modern Text Input (`txtLastName`, bind to `ThisItem.LastName`).  
-   - **Subject:** Modern Dropdown (`drpSubject`, bind to `Choices(StudentTracker.Subject)`).  
-   - **Grade:** Modern Dropdown (`drpGrade`, bind to `Choices(StudentTracker.Grade.Value)`).  
-   - **Reported Date:** Modern Date Picker (`dpReportedDate`, bind to `ThisItem.ReportedDate`).  
-   - **Active:** Checkbox (`chkActive`, bind to `ThisItem.Active`).  
-
----
-
-### **Step 4: Track Changes with a Collection**  
-1. **Create a Hidden Tracking Button:**  
-   - Add a button inside the gallery (`btnTrackChanges`).  
-   - Set **Visible** to `false`.  
-
-2. **OnSelect Logic for Tracking Edits:**  
+## **Step 3: Insert a Blank Vertical Gallery**
+1. Go to the **Insert** tab and select **Gallery** > **Blank Vertical Gallery**.
+2. Set the **Items** property of the gallery to your SharePoint list:
    ```powerapps
-   If(  
-     IsBlank(LookUp(colGridUpdates, ID = ThisItem.ID)),  
-     Collect(colGridUpdates, {  
-       ID: ThisItem.ID,  
-       Title: txtFirstName.Value,  
-       LastName: txtLastName.Value,  
-       Subject: drpSubject.Selected.Value,  
-       Grade: drpGrade.Selected.Value,  
-       ReportedDate: dpReportedDate.SelectedDate,  
-       Active: chkActive.Checked  
-     }),  
-     UpdateIf(colGridUpdates,  
-       ID = ThisItem.ID,  
-       {  
-         Title: txtFirstName.Value,  
-         LastName: txtLastName.Value,  
-         Subject: drpSubject.Selected.Value,  
-         Grade: drpGrade.Selected.Value,  
-         ReportedDate: dpReportedDate.SelectedDate,  
-         Active: chkActive.Checked  
-       }  
-     )  
-   )  
-   ```  
-
-3. **Trigger Tracking on Edit:**  
-   - Set **OnChange** for all input controls to `Select(btnTrackChanges)`.  
+   Gallery.Items = StudentTracker
+   ```
 
 ---
 
-### **Step 5: Save Changes to SharePoint**  
-1. **Add a Save Button:**  
-   - **OnSelect**:  
-     ```powerapps
-     Patch(  
-       StudentTracker,  
-       ShowColumns(colGridUpdates, "ID", "Title", "LastName", "Subject", "Grade", "ReportedDate", "Active")  
-     );  
-     Notify("Saved successfully!", NotificationType.Success, 3000);  
-     Clear(colGridUpdates);  
-     Reset(varGalleryReset) // Forces gallery to refresh  
-     ```  
+## **Step 4: Add Editable Controls to the Gallery**
+Each row in the grid should contain controls for inline editing:
+- **Text Input** for text fields (`Title`, `LastName`).
+- **Dropdown** for choice fields (`Subject`, `Grade`).
+- **Date Picker** for date fields (`ReportedDate`).
+- **Checkbox** for yes/no fields (`Active`).
+
+Set each control’s **Default** value to match the SharePoint list column:
+```powerapps
+txtTitle.Default = ThisItem.Title
+drpSubject.Default = ThisItem.Subject
+```
 
 ---
 
-### **Step 6: Add Undo, New, and Delete Buttons**  
-1. **Undo Changes:**  
-   - **Button Text**: `↩️ Undo`  
-   - **OnSelect**:  
-     ```powerapps
-     Clear(colGridUpdates);  
-     Reset(varGalleryReset)  
-     ```  
-   - **DisplayMode**:  
-     ```powerapps
-     If(CountRows(colGridUpdates) = 0, Disabled, Edit)  
-     ```  
+## **Step 5: Track Changes Using a Collection**
+To track modified rows **before saving them**, use a collection (`colGridUpdates`). This ensures that only changed rows are updated in SharePoint.
 
-2. **Create New Record:**  
-   - **Button Text**: `➕ New`  
-   - **OnSelect**:  
-     ```powerapps
-     Patch(  
-       StudentTracker,  
-       Defaults(StudentTracker),  
-       {Title: "New", LastName: "Student", ReportedDate: Today()}  
-     );  
-     Reset(varGalleryReset)  
-     ```  
-
-3. **Delete Record:**  
-   - Add a trash icon inside the gallery.  
-   - **OnSelect**:  
-     ```powerapps
-     Remove(StudentTracker, ThisItem);  
-     Reset(varGalleryReset)  
-     ```  
+Modify the `OnChange` event of each control to track only real user edits:
+```powerapps
+If(
+    ThisItem.Title <> txtTitle.Text || 
+    ThisItem.Subject <> drpSubject.Selected.Value, 
+    Select(hiddenEdition)
+)
+```
 
 ---
 
-## **4. Advanced Features**  
+## **Step 6: Hidden Edition Button**
+The hiddenEdition button is responsible for adding modified records to `colGridUpdaates`, ensuring that only edited rows are tracked.
 
-### **Dynamic Filtering**  
-1. **Add a Filter Dropdown:**  
-   - **Items**: `Choices(StudentTracker.Subject)`  
-   - **OnChange**:  
-     ```powerapps
-     Reset(varGalleryReset)  
-     ```  
-
-2. **Update Gallery Items:**  
-   ```powerapps
-   Filter(  
-     StudentTracker,  
-     IsBlank(drpFilter.Selected.Value) || Subject.Value = drpFilter.Selected.Value  
-   )  
-   ```  
+```powerapps
+If(
+    (ThisItem.Title <> txtTitle.Text || ThisItem.Subject <> drpSubject.Selected.Value),  
+    If(
+        IsBlank(LookUp(colGridUpdaates, ID = ThisItem.ID)),
+        Collect(colGridUpdaates, { ID: ThisItem.ID, Title: txtTitle.Text, Subject: drpSubject.Selected.Value }),
+        UpdateIf(colGridUpdaates, ID = ThisItem.ID, { Title: txtTitle.Text, Subject: drpSubject.Selected.Value })
+    )
+)
+```
 
 ---
 
-### **Sorting & Performance**  
-1. **Sort by Modified Date:**  
-   - Set the gallery’s **Items** to:  
-     ```powerapps
-     SortByColumns(StudentTracker, "Modified", Descending)  
-     ```  
+## **Step 7: Save Button (Updating SharePoint)**
+The Save button commits **only modified rows** to SharePoint.
 
-2. **Delegation Warning:**  
-   - Use `Filter` and `Sort` with delegable operations (e.g., avoid `StartsWith` with large datasets).  
-
----
-
-## **5. Testing & Validation**  
-1. **Test Case 1: Edit a Cell**  
-   - Change "John Doe" to "John Smith" > Click **Save** > Verify SharePoint list updates.  
-
-2. **Test Case 2: Undo Changes**  
-   - Edit multiple cells > Click **Undo** > Confirm changes revert.  
-
-3. **Test Case 3: Add/Delete Record**  
-   - Click **New** > Fill fields > Verify the record appears in SharePoint.  
+```powerapps
+Patch(
+    StudentTracker,
+    ShowColumns(colGridUpdaates, "Title", "Subject", "ID")
+);
+Clear(colGridUpdaates);
+Refresh(StudentTracker);
+Notify("Updated Successfully", NotificationType.Success, 3000);
+```
 
 ---
 
-## **6. Final Output**  
-![Editable Grid Demo](https://i.imgur.com/9GkR5dH.png)  
+## **Step 8: Undo and Reset**
+An **Undo Button** allows users to discard changes before saving.
+
+```powerapps
+OnSelect:
+Clear(colGridUpdaates);
+Set(varReset, false);
+Set(varReset, true);
+```
+
+Set its **`DisplayMode`** property to enable only when changes exist:
+```powerapps
+If(CountRows(colGridUpdaates) > 0, DisplayMode.Edit, DisplayMode.Disabled)
+```
 
 ---
 
-## **7. Troubleshooting**  
-- **Error: "Required Field Missing"**  
-  - Ensure new records have values for mandatory columns (e.g., `Title`, `Last Name`).  
-- **Lookup Column Not Updating**  
-  - Verify the **Grades** list has valid entries and the dropdown’s `Items` property uses `Choices()`.  
+## **Step 9: Filtering**
+To allow filtering **without interfering with tracking**, update the gallery’s `Items` property:
+
+```powerapps
+Gallery.Items = Filter(
+    StudentTracker,
+    IsBlank(drpFilter.Selected.Value) || Subject.Value = drpFilter.Selected.Value
+)
+```
 
 ---
 
-## **8. Conclusion**  
-You’ve built a **high-performance editable grid** that mirrors Excel-like functionality in PowerApps! Key takeaways:  
-- Use **modern controls** for a polished UI.  
-- **Collections** are critical for tracking changes before saving.  
-- Always test delegation for large datasets.  
+## **Step 10: Testing**
+Test the following:
+- **Editing fields** ensures only modified rows are saved.
+- **Refreshing SharePoint** does not trigger unintended updates.
+- **Saving** clears `colGridUpdaates` properly.
+- **Undo** cancels changes without affecting saved data.
 
-**Next Steps:**  
-- Add role-based security (e.g., only teachers can edit grades).  
-- Export grid data to Excel/PDF.  
+---
 
-**Like this tutorial?**  
-👉 **Subscribe** for more PowerApps deep-dives!  
-🔔 **Enable notifications** to never miss an update!  
-💬 **Comment** below with your use case!
+## **Final Thoughts**
+This guide provides a structured approach to building a **fully functional editable grid** in PowerApps using **SharePoint**. The logic ensures that only **actual changes** are tracked and prevents unnecessary updates. These optimizations improve performance, maintain data integrity, and enhance user experience.
+
+---
+
+Let me know if you have any questions or need further clarification.
