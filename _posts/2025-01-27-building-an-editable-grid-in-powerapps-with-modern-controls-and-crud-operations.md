@@ -152,6 +152,3 @@ Test the following:
 ## **Final Thoughts**
 This guide provides a structured approach to building a **fully functional editable grid** in PowerApps using **SharePoint**. The logic ensures that only **actual changes** are tracked and prevents unnecessary updates. These optimizations improve performance, maintain data integrity, and enhance user experience.
 
----
-
-Let me know if you have any questions or need further clarification.
