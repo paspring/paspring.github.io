@@ -61,7 +61,7 @@ The `create_sharepoint_list` function creates a new list using the **ListTemplat
 
 ```python
 from office365.sharepoint.lists.creation_information import ListCreationInformation
-from office365.sharepoint.lists.list_template_type import ListTemplateType
+from office365.sharepoint.lists.template_type import ListTemplateType
 
 def create_sharepoint_list(ctx, list_title, list_description, list_template=ListTemplateType.GenericList):
     """
@@ -92,7 +92,8 @@ def create_sharepoint_list(ctx, list_title, list_description, list_template=List
 The `configure_columns` function takes a configuration dictionary to define and add columns dynamically.
 
 ```python
-from office365.sharepoint.fields.field_creation_information import FieldCreationInformation
+from office365.sharepoint.fields.field import Field
+from office365.sharepoint.fields.field_type import FieldType
 
 def configure_columns(target_list, columns_config):
     """
@@ -102,28 +103,33 @@ def configure_columns(target_list, columns_config):
         columns_config (list): List of dictionaries defining column configurations.
     """
     for column in columns_config:
-        field_info = FieldCreationInformation()
-        field_info.display_name = column["name"]
-        field_info.internal_name = column["name"]
+        field_type = None
 
         if column["type"] == "text":
-            field_info.field_type_kind = 2  # Text field
+            field_type = FieldType.Text
         elif column["type"] == "number":
-            field_info.field_type_kind = 9  # Number field
+            field_type = FieldType.Number
         elif column["type"] == "choice":
-            field_info.field_type_kind = 6  # Choice field
-            field_info.choices = column.get("choices", [])
-            field_info.default_value = column.get("default_value")
+            field_type = FieldType.Choice
         elif column["type"] == "datetime":
-            field_info.field_type_kind = 4  # DateTime field
-            field_info.display_format = column.get("display_format", 0)  # 0 = DateOnly, 1 = DateTime
+            field_type = FieldType.DateTime
         else:
             print(f"Unsupported column type: {column['type']}")
             continue
 
-        # Add the field to the list
-        target_list.fields.add(field_info)
+        # Create the field
+        field = target_list.fields.create_field_as_xml(
+            f'<Field Type="{field_type}" DisplayName="{column["name"]}" Name="{column["name"]}" />'
+        )
         target_list.context.execute_query()
+
+        # Configure additional properties for choice fields
+        if column["type"] == "choice":
+            field.choices = column.get("choices", [])
+            field.default_value = column.get("default_value", "")
+            field.update_and_push_changes()
+            target_list.context.execute_query()
+
         print(f"Column '{column['name']}' added successfully!")
 ```
 
