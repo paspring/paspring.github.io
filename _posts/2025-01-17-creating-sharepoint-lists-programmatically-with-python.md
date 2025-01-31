@@ -10,13 +10,13 @@ header:
 excerpt: "SharePoint is a powerful platform for collaboration and data management, and automating tasks like creating lists, renaming them, and adding columns can save a lot of time and effort"
 ---
 
-SharePoint is a powerful platform for collaboration and data management. Automating tasks like **creating lists, renaming them, adding columns, and deleting columns** can save time and effort. In this guide, you'll learn how to **create, update, manage, and delete SharePoint lists** programmatically using Python with the `Office365-REST-Python-Client` library.  
+SharePoint is a powerful platform for collaboration and data management. Automating tasks like **creating lists, renaming them, adding columns (individually or from a configuration file), and deleting columns** can save time and effort. In this guide, you'll learn how to **create, update, manage, and delete SharePoint lists** programmatically using Python with the `Office365-REST-Python-Client` library.  
 
 ---
 
 ## **Why Automate SharePoint List Management?**  
 
-Manually managing SharePoint lists can be time-consuming, especially when dealing with **multiple lists or frequent updates**. By automating the process, you can:  
+Managing SharePoint lists manually can be time-consuming, especially when dealing with **multiple lists or frequent updates**. By automating the process, you can:  
 
 ✅ **Save time** with reusable scripts.  
 ✅ **Ensure consistency** across different lists.  
@@ -47,12 +47,12 @@ We'll break the process into **six** steps:
 
 1. **Authenticate & Connect to SharePoint** – Establish a connection using credentials.  
 2. **Create a SharePoint List** – Programmatically create a list with a specified template.  
-3. **Add Columns to a SharePoint List** – Dynamically configure and add columns.  
-4. **Update an Existing List** – Add columns programmatically to an already created SharePoint list.  
+3. **Add Columns to a SharePoint List** – Dynamically add columns one by one.  
+4. **Add Multiple Columns from a Dictionary** – Use a JSON configuration file to add multiple columns at once.  
 5. **Rename a SharePoint List** – Modify the title of an existing SharePoint list.  
 6. **Delete a Column from an Existing SharePoint List** – Remove a specific column from an existing list.  
 
-Each function is **modular** and follows the **Single Responsibility Principle (SRP)** for clean and maintainable code.  
+Each function follows the **Single Responsibility Principle (SRP)** for clean and maintainable code.  
 
 ---
 
@@ -104,78 +104,103 @@ create_sharepoint_list(ctx, "Project Tasks", "A list to track project tasks")
 
 ---
 
-## **Step 3: Add Columns to a New SharePoint List**  
+## **Step 3: Add a Column to an Existing SharePoint List (One by One)**  
+
+This function **dynamically adds a single column** to an existing SharePoint list.
 
 ```python
-from office365.sharepoint.fields.fields import Field
 from office365.sharepoint.fields.field_type import FieldType
 
-def configure_columns(target_list, columns_config):
+def add_column_to_existing_list(ctx, list_title, column_name, column_type, choices=None, default_value=None):
     """
-    Add columns to a SharePoint list dynamically.
+    Add a column to an existing SharePoint list.
     """
-    for column in columns_config:
-        field_type = None
+    try:
+        # Retrieve the existing list
+        target_list = ctx.web.lists.get_by_title(list_title)
+        ctx.load(target_list)
+        ctx.execute_query()
 
-        if column["type"] == "text":
+        field_type = None
+        if column_type == "text":
             field_type = FieldType.Text
-        elif column["type"] == "number":
+        elif column_type == "number":
             field_type = FieldType.Number
-        elif column["type"] == "choice":
+        elif column_type == "choice":
             field_type = FieldType.Choice
-        elif column["type"] == "datetime":
+        elif column_type == "datetime":
             field_type = FieldType.DateTime
         else:
-            print(f"Unsupported column type: {column['type']}")
-            continue
+            print(f"Unsupported column type: {column_type}")
+            return
 
-        field_xml = f'<Field Type="{field_type.value}" DisplayName="{column["name"]}" Name="{column["name"]}" />'
+        # Define the column XML
+        field_xml = f'<Field Type="{field_type.value}" DisplayName="{column_name}" Name="{column_name}" />'
         field = target_list.fields.create_field_as_xml(field_xml)
-        target_list.context.execute_query()
+        ctx.execute_query()
 
-        print(f"Column '{column['name']}' added successfully!")
+        # Configure additional properties for Choice fields
+        if column_type == "choice":
+            field.set_property("Choices", choices or [])
+            field.set_property("DefaultValue", default_value or "")
+            field.update()
+            ctx.execute_query()
+
+        print(f"Column '{column_name}' added successfully to list '{list_title}'!")
+
+    except Exception as e:
+        print(f"Error adding column: {e}")
 ```
 
-### **Example Usage**
+### **Examples for Adding Columns One by One**
 ```python
-columns = [
-    {"name": "TaskName", "type": "text"},
-    {"name": "TaskPriority", "type": "choice", "choices": ["Low", "Medium", "High"], "default_value": "Medium"},
-    {"name": "DueDate", "type": "datetime"}
-]
-
-new_list = create_sharepoint_list(ctx, "Project Tasks", "A list to track project tasks")
-configure_columns(new_list, columns)
+add_column_to_existing_list(ctx, "Project Tasks", "TaskName", "text")
+add_column_to_existing_list(ctx, "Project Tasks", "TaskBudget", "number")
+add_column_to_existing_list(ctx, "Project Tasks", "TaskStatus", "choice", 
+                            choices=["Not Started", "In Progress", "Completed"], 
+                            default_value="Not Started")
+add_column_to_existing_list(ctx, "Project Tasks", "DueDate", "datetime")
 ```
 
 ---
 
-## **Step 4: Add a Column to an Existing SharePoint List**  
+## **Step 4: Add Multiple Columns from a Dictionary**  
 
+You can define a dictionary in a **JSON file** to configure and add multiple columns dynamically.
+
+### **Example Configuration File (`columns_config.json`)**
+```json
+[
+    {"name": "TaskName", "type": "text"},
+    {"name": "TaskPriority", "type": "choice", "choices": ["Low", "Medium", "High"], "default_value": "Medium"},
+    {"name": "TaskBudget", "type": "number"},
+    {"name": "DueDate", "type": "datetime"}
+]
+```
+
+### **Function to Add Columns from a JSON File**
 ```python
-def add_column_to_existing_list(ctx, list_title, column_name, column_type):
+import json
+
+def add_columns_from_config(ctx, list_title, config_file):
     """
-    Add a column to an existing SharePoint list.
+    Add multiple columns to an existing SharePoint list using a JSON configuration file.
     """
-    target_list = ctx.web.lists.get_by_title(list_title)
-    ctx.load(target_list)
-    ctx.execute_query()
+    try:
+        with open(config_file, "r") as file:
+            columns_config = json.load(file)
 
-    field_type = getattr(FieldType, column_type.capitalize(), None)
-    if not field_type:
-        print(f"Unsupported column type: {column_type}")
-        return
+        for column in columns_config:
+            add_column_to_existing_list(ctx, list_title, column["name"], column["type"], 
+                                        column.get("choices"), column.get("default_value"))
 
-    field_xml = f'<Field Type="{field_type.value}" DisplayName="{column_name}" Name="{column_name}" />'
-    field = target_list.fields.create_field_as_xml(field_xml)
-    ctx.execute_query()
-
-    print(f"Column '{column_name}' added successfully to list '{list_title}'!")
+    except Exception as e:
+        print(f"Error adding columns: {e}")
 ```
 
 ### **Example Usage**
 ```python
-add_column_to_existing_list(ctx, "Project Tasks", "TaskOwner", "text")
+add_columns_from_config(ctx, "Project Tasks", "columns_config.json")
 ```
 
 ---
@@ -194,11 +219,6 @@ def rename_sharepoint_list(ctx, current_title, new_title):
     print(f"List '{current_title}' has been renamed to '{new_title}'!")
 ```
 
-### **Example Usage**
-```python
-rename_sharepoint_list(ctx, "Project Tasks", "Updated Project Tasks")
-```
-
 ---
 
 ## **Step 6: Delete a Column from an Existing SharePoint List**  
@@ -208,38 +228,24 @@ def delete_column_from_list(ctx, list_title, column_name):
     """
     Delete a column from an existing SharePoint list.
     """
-    try:
-        target_list = ctx.web.lists.get_by_title(list_title)
-        ctx.load(target_list)
-        ctx.execute_query()
+    target_list = ctx.web.lists.get_by_title(list_title)
+    ctx.load(target_list)
+    ctx.execute_query()
 
-        field = target_list.fields.get_by_internal_name_or_title(column_name)
-        field.delete_object()
-        ctx.execute_query()
+    field = target_list.fields.get_by_internal_name_or_title(column_name)
+    field.delete_object()
+    ctx.execute_query()
 
-        print(f"Column '{column_name}' deleted successfully from list '{list_title}'!")
-
-    except Exception as e:
-        print(f"Error deleting column: {e}")
+    print(f"Column '{column_name}' deleted successfully from list '{list_title}'!")
 ```
-
-### **Example Usage**
-```python
-delete_column_from_list(ctx, "Project Tasks", "TaskOwner")
-```
-
-✅ **Expected Outcome:** The column `"TaskOwner"` is removed from the **"Project Tasks"** list.
 
 ---
 
 ## **Conclusion**  
 
 With these Python functions, you can:  
-✅ **Create SharePoint lists programmatically**  
-✅ **Dynamically add columns** to new and existing lists  
-✅ **Rename existing lists**  
-✅ **Delete columns from existing lists**  
+✅ **Add columns one by one**  
+✅ **Use a JSON configuration file to add multiple columns**  
+✅ **Easily manage SharePoint lists**  
 
-By automating SharePoint list management, you can **improve efficiency, maintain consistency, and reduce manual work**.  
-
-If you have any questions or need further improvements, let me know in the comments! 🚀
+Let me know if you have any questions! 🚀
