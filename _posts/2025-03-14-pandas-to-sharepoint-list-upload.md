@@ -22,8 +22,9 @@ In this post, we will walk through how to:
 
 ## **Prerequisites**
 To follow this guide, you need:
-- **Office365-REST-Python-Client** installed:  
-  ```bash
+- **Office365-REST-Python-Client** installed:
+  
+```python
   pip install Office365-REST-Python-Client
   ```
 - **Access to a SharePoint list** where you have permissions to read and write.
