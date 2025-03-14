@@ -19,6 +19,7 @@ In this post, we will walk through how to:
 1. Retrieve column mappings from SharePoint (internal names vs. display names).
 2. Transform a Pandas DataFrame so that its column names match SharePoint's required format.
 3. Upload multiple rows to SharePoint in an **optimized batch process** while avoiding system columns.
+4. Dynamically detect the correct internal name for the **Title** column to ensure it is retained correctly.
 
 ---
 
@@ -51,14 +52,14 @@ ctx = ClientContext(site_url).with_credentials(ClientCredential(client_id, clien
 
 ---
 
-## **Step 2: Retrieve Column Mappings (Including System Columns)**
-SharePoint uses **internal field names** that differ from the **display names** users see in the UI. Additionally, some fields (like `ID`, `Created`, `Modified`) are **read-only system fields** that must be excluded before uploading data.
+## **Step 2: Retrieve Column Mappings (Including System Columns & Title Handling)**
+SharePoint uses **internal field names** that differ from the **display names** users see in the UI. Additionally, some fields (like `ID`, `Created`, `Modified`) are **read-only system fields** that must be excluded before uploading data. However, the **Title** column should not be removed, and its correct internal name must be dynamically detected.
 
 ```python
 def get_column_mappings(ctx, list_name):
     """
     Retrieves column mappings from SharePoint (internal name → display name)
-    and identifies system columns.
+    and identifies system columns (excluding the actual internal name of 'Title').
     """
     try:
         sharepoint_list = ctx.web.lists.get_by_title(list_name)
@@ -66,22 +67,28 @@ def get_column_mappings(ctx, list_name):
 
         column_mappings = {}
         system_columns = []
+        title_internal_name = None  # Store the actual internal name of 'Title'
 
         for field in fields:
-            field_title = field.properties.get('Title')
-            field_internal = field.properties.get('StaticName')
+            field_title = field.properties.get('Title')  # Display Name
+            field_internal = field.properties.get('StaticName')  # Internal Name
             field_read_only = field.properties.get('ReadOnlyField', False)
 
-            column_mappings[field_title] = field_internal
+            column_mappings[field_internal] = field_title
 
-            if field_read_only or field_internal in ["ID", "Created", "Modified", "Author", "Editor"]:
-                system_columns.append(field_internal)  # Store system fields
+            # Identify the actual internal name for 'Title' dynamically
+            if field_title.lower() == "title":
+                title_internal_name = field_internal
 
-        return column_mappings, system_columns
+            # Exclude system columns but keep the actual 'Title' field
+            if field_read_only and field_internal != title_internal_name:
+                system_columns.append(field_internal)
+
+        return column_mappings, system_columns, title_internal_name
 
     except Exception as e:
         print(f"Error retrieving column mappings: {e}")
-        return {}, []
+        return {}, [], None
 ```
 
 ---
@@ -95,8 +102,7 @@ def transform_dataframe(df, column_mappings):
     Transforms DataFrame column names to match SharePoint's internal names.
     """
     try:
-        inverse_mapping = {v: k for k, v in column_mappings.items()}  # Reverse mapping
-        df_transformed = df.rename(columns=inverse_mapping)
+        df_transformed = df.rename(columns=column_mappings)
         return df_transformed
     except Exception as e:
         print(f"Error transforming DataFrame: {e}")
@@ -105,20 +111,21 @@ def transform_dataframe(df, column_mappings):
 
 ---
 
-## **Step 4: Upload Multiple Rows to SharePoint (Ignoring System Columns)**
-Now that our DataFrame is correctly formatted, we need to upload all rows efficiently while **excluding system columns**.
+## **Step 4: Upload Multiple Rows to SharePoint (Ignoring System Columns but Keeping Title)**
+Now that our DataFrame is correctly formatted, we need to upload all rows efficiently while **excluding system columns** but ensuring the correct internal name for "Title" remains.
 
 ```python
 def upload_to_sharepoint(ctx, list_name, df):
     """
     Uploads multiple DataFrame rows to a SharePoint List in batches,
-    while ignoring system columns.
+    while ignoring system columns (but keeping the correct internal name of 'Title').
     """
     try:
-        column_mappings, system_columns = get_column_mappings(ctx, list_name)
+        column_mappings, system_columns, title_internal_name = get_column_mappings(ctx, list_name)
         df_transformed = transform_dataframe(df, column_mappings)
 
-        # Remove system columns before upload
+        # Remove system columns but ensure 'Title' is NOT removed
+        system_columns = [col for col in system_columns if col != title_internal_name]
         df_transformed = df_transformed.drop(columns=[col for col in system_columns if col in df_transformed.columns], errors='ignore')
 
         sharepoint_list = ctx.web.lists.get_by_title(list_name)
@@ -137,24 +144,12 @@ def upload_to_sharepoint(ctx, list_name, df):
 
 ---
 
-## **Step 5: Putting It All Together**
-### **Example Usage**
+## **Final Check Before Uploading**
+Before uploading, verify the transformed DataFrame and the internal name of "Title":
 ```python
-# Define SharePoint List Name
-list_name = "YourSharePointListName"
-
-# Sample Pandas DataFrame (with display names)
-import pandas as pd
-data = {
-    'Display Column 1': ['Value1', 'Value2', 'Value3'],
-    'Display Column 2': ['ValueA', 'ValueB', 'ValueC'],
-    'Created': ['2024-01-01', '2024-01-02', '2024-01-03'],  # System column
-    'ID': [1, 2, 3]  # System column
-}  
-df = pd.DataFrame(data)
-
-# Upload data to SharePoint (system columns will be removed)
-upload_to_sharepoint(ctx, list_name, df)
+df_transformed = transform_dataframe(df, column_mappings)
+print("Final Columns Before Upload:", df_transformed.columns.tolist())
+print("Internal Name for 'Title':", title_internal_name)
 ```
 
 ---
@@ -163,7 +158,8 @@ upload_to_sharepoint(ctx, list_name, df)
 This guide provides a **structured approach** to uploading a Pandas DataFrame to a SharePoint List while:
 ✔ **Retrieving column mappings**  
 ✔ **Transforming column names**  
-✔ **Ignoring system columns**  
+✔ **Ignoring system columns (except 'Title')**  
+✔ **Dynamically detecting the correct internal name for 'Title'**  
 ✔ **Uploading multiple rows in an optimized batch process**  
 
 This modular approach ensures **scalability** and **efficiency** when dealing with large datasets in SharePoint.
@@ -176,5 +172,5 @@ This modular approach ensures **scalability** and **efficiency** when dealing wi
 - Implement error handling for specific field types (e.g., **dates, multi-choice fields, lookup fields**).
 - Automate the process using **scheduled jobs** if needed.
 
-Hope this helps! Let me know if you need further refinements. 🚀
+
 
